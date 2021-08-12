@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Antonin Faure</title>
@@ -27,7 +27,7 @@
 
         <header class="col-12 pt-5 m-0">
             <h1 class="text-center">Antonin Faure</h1>
-            <h5 style="font-family: 'Lato', sans-serif; font-weight: 300;" class="text-center"><i>Nunc est bibendum</i></h5>
+            <h5 style="font-family: 'Lato', sans-serif; font-weight: 300;" class="text-center"><i>Tout est possible</i></h5>
         </header>
 
 
@@ -40,24 +40,22 @@
 
             <div class="row m-0 p-0">
                 <div class="col-12 m-0 mt-5 p-2 part-banner">
-                    <h2>A propos</h2>
+                    <h2>À propos</h2>
                 </div>
                 <div class="row m-0 p-5">
                     <div class="col-12 col-md-4 m-0 mb-2 p-0 text-center order-md-2">
-                        <img class="img-fluid" style="border-radius: 50%;" src="./images/photoCV.jpg">
+                        <img class="img-fluid shadow-lg" style="border-radius: 50%;" src="./images/photoCV.jpg">
                     </div>
                     <div class="col-12 col-md-4 m-0 my-auto p-3 order-md-1 text-center">
-                        <h3>Qui-suis je</h3>
+                        <h3>Qui suis-je ?</h3>
                         <h6>Antonin Faure</h6>
                         <h6>20 ans</h6>
                         <h6>Originaire de Nantes, France</h6>
                         <h6>Habite à Lausanne, Suisse</h6>
+                        <h6>Étudiant à l'EPFL</h6>
                     </div>
                     <div class="col-12 col-md-4 m-0 my-auto p-3 order-md-3 text-center">
                        <h3>Mes hobbies</h3>
-                       <div class="col-12 text-left">
-                           
-                       </div>
                        <h6>Cyclisme</h6>
                        <h6>Associatif</h6>
                        <h6>Développement Web</h6>
@@ -74,7 +72,7 @@
                 <div class="col-12 m-0 mt-5 p-2 part-banner">
                     <h2>Expérience associative</h2>
                 </div>
-                <div class="col-12 m-0 p-5">
+                <div class="col-12 m-0 p-2 p-md-5">
                     <div class="row m-0 p-0">
 
                         <!-- Coaching Tek -->
@@ -185,8 +183,8 @@
                 <div class="col-12 m-0 mt-5 p-2 part-banner">
                     <h2>Mes réalisations</h2>
                 </div>
-                <div class="col-12 p-4 m-0">
-                    <div class="row p-4 m-0">
+                <div class="col-12 p-2 p-md-4 m-0">
+                    <div class="row p-2 p-md-4 m-0">
                         <div class="col-12 col-md-6 col-lg-4 p-0 m-0">
                             <div class="card m-3 shadow site">
                                 <a href="amacepfl.html">
@@ -237,18 +235,6 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 p-0 m-0">
                             <div class="card m-3 shadow site">
-                                <a href="isacademia.html">
-                                    <div class="card-header text-center">
-                                        <h2 class="mt-2">Scrapped IS-Acadamia</h2>
-                                    </div>
-                                    <div class="card-body p-0">
-                                        <img src="./images/gaspar.png" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 p-0 m-0">
-                            <div class="card m-3 shadow site">
                                 <a href="shypooper.html">
                                     <div class="card-header text-center">
                                         <h2 class="mt-2">ShyPooper</h2>
@@ -267,6 +253,39 @@
                                     </div>
                                     <div class="card-body p-0">
                                         <img src="./images/stickers2.png" class="img-fluid">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col-12 m-0 mt-5 p-2 part-banner">
+                    <h2>Mes autres projets</h2>
+                </div>
+                <div class="col-12 p-2 p-md-4 m-0">
+                    <div class="row p-2 p-md-4 m-0">
+                        <div class="col-12 col-md-6 col-lg-4 p-0 m-0">
+                            <div class="card m-3 shadow site">
+                                <a href="isacademia.html">
+                                    <div class="card-header text-center">
+                                        <h2 class="mt-2">Scrapped IS-Acadamia</h2>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <img src="./images/gaspar.png" class="img-fluid">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 p-0 m-0">
+                            <div class="card m-3 shadow site">
+                                <a href="rolexbot.html">
+                                    <div class="card-header text-center">
+                                        <h2 class="mt-2">Rolex Bot</h2>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <img src="./images/rolexBot.png" class="img-fluid">
                                     </div>
                                 </a>
                             </div>
@@ -345,6 +364,15 @@
     }
     .asso h5 > span:nth-child(2) {
         font-style: italic;
+    }
+    @media screen and (max-width: 768px) { 
+        .asso-pic {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            float: none;
+        } 
     }
 </style>
 </html>
