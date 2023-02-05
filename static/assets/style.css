@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "GilroyBold";
+    src: url("./fonts/GilroyExtraBold.eot") format("embedded-opentype");
+    src: url("./fonts/GilroyExtraBold.woff") format("woff"),
+        url("./fonts/GilroyExtraBold.otf") format("opentype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "GilroyLight";
+    src: url("./fonts/GilroyLight.eot") format("embedded-opentype");
+    src: url("./fonts/GilroyLight.woff") format("woff"),
+        url("./fonts/GilroyLight.otf") format("opentype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+html, body {
+    background-color: #080808;
+    color: #f3f3f3;
+    min-height: 100%;
+    height: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'GilroyBold', sans-serif;
+}
+
+li {
+    font-family: 'GilroyLight';
+    font-size: 1.5em;
+}
+.part-banner {
+    background: #ce0a3b;
+    color: white;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+footer {
+    background: #ce0a3b;
+    color: #CED0DF;
+}
+footer h5 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: white;
+}
+.asso {
+    color: #080808;
+}
+.card {
+    color: #080808;
+}
+h6 {
+    font-family: 'GilroyLight';
+}
