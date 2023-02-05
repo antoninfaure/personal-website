@@ -1,15 +1,11 @@
 from flask import request, Flask, render_template, redirect, url_for, abort, make_response, send_file
 from datetime import datetime
 import numpy as np
-from flask_wtf.csrf import CSRFProtect
 import re
 import os
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
-
-csrf = CSRFProtect(app)
-csrf.init_app(app)
 
 @app.context_processor
 def inject_now():
