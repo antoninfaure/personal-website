@@ -12,22 +12,25 @@
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Custom -->
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='assets/style.css')}}"/>
 </head>
 <body>
     <div class="row m-0 p-0 fill">
-        <div class="aside shadow" style="background: white;">
-            <h3 class="m-3"><a href="/" class="btn btn-dark">Accueil</a></h3>
-            <div class="col-12 p-3 mt-3">
-                <h2>Rolex Bot</h2>
+        <div class="aside shadow">
+            <a href="/" class="btn btn-light m-3">Accueil</a>
+            <div class="col-12 p-3">
+                <h3>Rolex Bot</h3>
                 <p>Un bot NodeJS ayant pour but de réserver sa place aux différents créneaux pour la bibliothèque EPFL durant les révisions du printemps 2020.<br>Il utilise notamment la librairie <a href="https://github.com/puppeteer/puppeteer" target="_blank">Puppeteer</a> qui permet, avec l'usage de Chromium, de créer un navigateur virtuel et de manipuler les éléments du DOM des pages web, et ainsi remplir automatiquement des champs de textes et de cliquer sur des boutons.</p>
             </div>
             <div class="col-12 p-3">
-                <h3>Made with</h3>
-                <button class="btn btn-primary">Express</button>
-                <button class="btn btn-success">Node.js</button>
+                <h5>Made with</h5>
+                <button class="btn btn-primary my-2">Express</button>
+                <button class="btn btn-success my-2">Node.js</button>
             </div>
         </div>
-        <div class="container-right">
+        <div class="container-right text-center">
             <img src="/images/rolexBot.png" class="img-fluid">
             <img src="/images/rolexBot1.png" class="img-fluid">
             <img src="/images/rolexBot2.png" class="img-fluid">
