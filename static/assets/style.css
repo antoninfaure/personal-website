@@ -139,4 +139,10 @@ h6 {
         font-size: 6rem;
         font-weight: 800;
     }
+    .text-banner span {
+        font-family: 'GilroyBold';
+        font-weight: 800;
+        font-size: 8vw;
+        line-height: 160%
+    }
 }
