@@ -14,12 +14,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Vis.js -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>-->
 
-    <!-- Graph data -->
-    <script type="text/javascript" src="{{url_for('static', filename='assets/graphsociatif/edges.json')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='assets/graphsociatif/nodes.json')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='assets/graphsociatif/link_edges.json')}}"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     
 </head>
 <body>
@@ -37,7 +34,7 @@
             </div>
         </div>-->
         <div class="container-right">
-           <div id="mynetwork"></div>
+           <svg id="mynetwork"></svg>
         </div>
     </div>
 </body>
@@ -93,12 +90,17 @@
         }
     }*/
 </style>
-
+<script type="module" src="{{url_for('static', filename='assets/graphsociatif/graphsociatif.js')}}"></script>
+<style>
+  html, body {
+    background-color: black;
+  }
+  
+  
+  </style>
 <script type="text/javascript">
 
-var nodes, edges, network;
-
-
+/*
 function draw() {
   // create an array with nodes
   nodes = new vis.DataSet();
@@ -157,15 +159,19 @@ function draw() {
         label : {
           enabled: true
         }
+      },
+      shapeProperties: {
+        interpolation: false    // 'true' for intensive zooming
       }
     },
     physics: {
       enabled: true,
-       barnesHut: {
+      barnesHut: {
             "gravitationalConstant": -3900,
             "centralGravity": 0
-        },
-        minVelocity: 1
+      },
+      minVelocity: 1,
+      stabilizations: false
     }
   };
   network = new vis.Network(container, data, options);
@@ -174,6 +180,7 @@ function draw() {
 
 window.addEventListener("load", () => {
   draw();
-});
+});*/
+
 </script>
 </html>
