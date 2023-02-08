@@ -17,6 +17,8 @@ def home():
 
 @app.route('/projets/<string:projet>', methods=['GET'])
 def projet(projet):
+    if(not os.path.isfile(f'./templates/projets/{projet}.html')):
+        return abort(404)
     return render_template(f'projets/{projet}.html')
 
 @app.route('/images/<string:pid>.jpg')
