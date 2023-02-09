@@ -14,26 +14,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Custom -->
-    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='assets/style.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="../static/assets/style.css"/>
 </head>
 <body>
     <div class="row m-0 p-0 fill">
         <div class="col-12 col-md-4 p-3 m-0 shadow">
-            <a href="/" class="btn btn-light m-3">Accueil</a>
+            <a href="index.html" class="btn btn-light m-3">Accueil</a>
             <div class="col-12 p-3">
-                <h3>AMAC EPFL</h3>
-                <p>Site de l'Association des étudiant·e·s en génie mécanique de l'EPFL.</p>
-                <a href="https://amacepfl.ch" class="btn btn-info">amacepfl.ch</a>
+                <h3>Occupancy EPFL</h3>
+                <p>Site permettant de visualiser les disponibilités des salles à l'EPFL. Une fonctionnalité permet de trouver des salles libres en fonction des heures sélectionnées.</p>
+                <a class="btn btn-secondary" href="https://github.com/antoninfaure/occupancy-epfl">GitHub</a>
+                <a href="https://occupancy-epfl.onrender.com" class="btn btn-info">occupancy-epfl.onrender.com</a>
             </div>
             <div class="col-12 p-3">
                 <h5>Made with</h5>
-                <button class="btn btn-danger my-2">MySQL</button>
-                <button class="btn btn-primary my-2">Express</button>
-                <button class="btn btn-success my-2">Node.js</button>
+                <button class="btn btn-danger my-2">MongoDB</button>
+                <button class="btn btn-primary my-2">Flask</button>
             </div>
         </div>
         <div class="col-12 col-md-8 p-0 m-0 browser">
-            <iframe src="https://amacepfl.ch" style="height: 100%; width: 100%;"></iframe>
+            <iframe src="https://occupancy-epfl.onrender.com" style="height: 100%; width: 100%;"></iframe>
         </div>
     </div>
 </body>

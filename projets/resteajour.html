@@ -14,15 +14,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Custom -->
-    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='assets/style.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="../static/assets/style.css"/>
 </head>
 <body>
     <div class="row m-0 p-0 fill">
         <div class="aside shadow">
-            <a href="/" class="btn btn-light m-3">Accueil</a>
+            <a href="index.html" class="btn btn-light m-3">Accueil</a>
             <div class="col-12 p-3">
-                <h3>ShyPooper</h3>
-                <p>Une web application capable de rassembler toutes les données sur les toilettes de l'EPFL et de les noter afin de déterminer les meilleurs toilettes pour "Shy poopers". Grâce à ce site, codé avec OpenLayers, MongoDB et Express, n'importe qui peut voir la qualité des toilettes de l'EFPL.</p>
+                <h3>Reste à jour</h3>
+                <p>Site d'aide destiné aux étudiant·e·s de l'EPFL. Gestion de contenu (cours, chapitres, notions, exercices). Génération de série d'exercices. Suivi de progression.</p>
+                <a href="https://resteajour.ch" class="btn btn-info">resteajour.ch</a>
             </div>
             <div class="col-12 p-3">
                 <h5>Made with</h5>
@@ -32,11 +33,13 @@
             </div>
         </div>
         <div class="container-right">
-            <img src="/images/shypooper1.png" class="img-fluid">
-            <img src="/images/shypooper2.png" class="img-fluid">
-            <img src="/images/shypooper3.png" class="img-fluid">
-            <img src="/images/shypooper4.png" class="img-fluid">
-            <img src="/images/shypooper5.png" class="img-fluid">
+            <video autoplay muted loop id="myVideo" class="m-0 p-0">
+                <source src="../static/videos/resteajour.mp4" type="video/mp4" class="m-0 p-0">
+            </video>
+            <img src="../static/images/resteajour1.png" class="img-fluid">
+            <img src="../static/images/resteajour2.png" class="img-fluid">
+            <img src="../static/images/resteajour3.png" class="img-fluid">
+            <img src="../static/images/resteajour4.png" class="img-fluid">
         </div>
     </div>
 </body>

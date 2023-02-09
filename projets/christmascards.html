@@ -14,16 +14,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Custom -->
-    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='assets/style.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="../static/assets/style.css"/>
 </head>
 <body>
     <div class="row m-0 p-0 fill">
         <div class="aside shadow">
-            <a href="/" class="btn btn-light m-3">Accueil</a>
+            <a href="index.html" class="btn btn-light m-3">Accueil</a>
             <div class="col-12 p-3">
-                <h3>Reste à jour</h3>
-                <p>Site d'aide destiné aux étudiant·e·s de l'EPFL. Gestion de contenu (cours, chapitres, notions, exercices). Génération de série d'exercices. Suivi de progression.</p>
-                <a href="https://resteajour.ch" class="btn btn-info">resteajour.ch</a>
+                <h3>Coaching Christmas Cards</h3>
+                <p>Site du Coaching EPFL, commission de l'AGEPoly, destiné à commander des cartes de Noël à offrir entre les membres de l'EPFL, envoyées par la poste avec des chocolats.</p>
             </div>
             <div class="col-12 p-3">
                 <h5>Made with</h5>
@@ -33,13 +32,8 @@
             </div>
         </div>
         <div class="container-right">
-            <video autoplay muted loop id="myVideo" class="m-0 p-0">
-                <source src="{{url_for('static', filename='videos/resteajour.mp4')}}" type="video/mp4" class="m-0 p-0">
-            </video>
-            <img src="/images/resteajour1.png" class="img-fluid">
-            <img src="/images/resteajour2.png" class="img-fluid">
-            <img src="/images/resteajour3.png" class="img-fluid">
-            <img src="/images/resteajour4.png" class="img-fluid">
+            <img src="../static/images/christmascards.png" class="img-fluid">
+            <img src="../static/images/christmascards1.png" class="img-fluid">
         </div>
     </div>
 </body>
@@ -91,4 +85,3 @@
     }
 </style>
 </html>
-
