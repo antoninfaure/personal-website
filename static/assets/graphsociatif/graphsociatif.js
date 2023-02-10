@@ -13,12 +13,13 @@ const svg = d3.select('svg')
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 const radius = 20
+const radius_people = 25
 
 var simulation = d3.forceSimulation()
   .force("link", d3.forceLink().id(function(d) { return d.id; }))
-  .force("charge", d3.forceManyBody().strength(d => { return d.type === 'user' ? 0 : -d.size*1000}))
+  .force("charge", d3.forceManyBody().strength(d => { return d.type === 'user' ? 0 : -d.size*10000}))
   .force("center", d3.forceCenter(width / 2, height / 2))
-  .force("collide",  d3.forceCollide().radius(d => { return d.type === 'user' ? (d.accreds + 2)*radius : Math.log2(d.size*radius + 2)*radius }).iterations(3))
+  .force("collide",  d3.forceCollide().radius(d => { return d.type === 'user' ? (d.accreds + 2)*radius_people : (d.size+5)*radius }).iterations(3))
 
   var g = svg.append("g")
     .attr("class", "everything");
@@ -42,7 +43,7 @@ var simulation = d3.forceSimulation()
 
   var circles = node.append("circle")
     .attr("r",  function(d) { 
-      return d.type === 'user' ? d.accreds*5 : Math.log2(d.size*radius + 2)*radius })
+      return d.type === 'user' ? d.accreds*radius_people : d.size*radius })
     .attr("fill", function(d) { 
       if (d.type == 'unit') {
         return color(d.group_id);
@@ -59,13 +60,16 @@ var simulation = d3.forceSimulation()
   drag_handler(node);
   
   var labels = node.append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", ".35em")
       .text(function(d) {
         return d.type === 'user' ? d.name : d.label
       })
-      .style("font-size", function(d) { return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 24) + "px"; })
-      .attr('x', 6)
-      .attr('y', 3)
+      .style("font-size", function(d) {
+        return d.type === 'user' ? d.accreds*radius_people : d.size*radius
+      })
       .style('fill', 'white')
+
 
   node.append("title")
       .text(function(d) { return d.type === 'user' ? d.name : d.label });
@@ -88,6 +92,7 @@ var simulation = d3.forceSimulation()
         .attr("transform", function(d) {
           return "translate(" + d.x + "," + d.y + ")";
         })
+      
   }
 
 

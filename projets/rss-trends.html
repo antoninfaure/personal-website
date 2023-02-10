@@ -18,6 +18,10 @@
 
     <!-- D3.js -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <link href="https://unpkg.com/prismjs@v1.x/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/prismjs@v1.x/components/prism-core.min.js"></script>
+	<script src="https://unpkg.com/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
 </head>
 <body>
     <div class="row m-0 p-0 fill">
@@ -34,13 +38,164 @@
             </div>
         </div>
         <div class="container-right">
+            <svg id="mynetwork"></svg>
             <div class="row m-0 p-0">
-                <div class="col-12 m-0 p-4">
-                    <svg id="mynetwork"></svg>
-                    <h4>Data Mining</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime accusantium nisi, voluptatum porro quo voluptatem cumque hic aperiam, fuga rem eligendi alias quas, repellat impedit exercitationem quasi tempore dolore earum!</p>
-                    <h4>Data Visualization</h4>
-                    <img src="../static/images/projets/rss-trends/rss-trends.png" class="img-fluid">
+                <div class="col-12 m-0 p-5">
+                    <h3>Data Mining</h3>
+                    <p>Pour récupérer des articles d'actualités françaises je me suis basé sur les flux RSS des médias suivants : </p>
+                    <div class="box">
+                        <pre>
+                            <code class="language-python">
+feed_urls = [
+    "http://www.lemonde.fr/rss/une.xml",
+    "https://www.bfmtv.com/rss/news-24-7/",
+    "https://www.liberation.fr/rss/",
+    "http://www.lefigaro.fr/rss/figaro_actualites.xml",
+    "https://www.franceinter.fr/rss",
+    "https://www.lexpress.fr/arc/outboundfeeds/rss/alaune.xml",
+    "https://www.francetvinfo.fr/titres.rss",
+    "https://www.la-croix.com/RSS",
+    "http://tempsreel.nouvelobs.com/rss.xml",
+    "http://www.lepoint.fr/rss.xml",
+    "https://www.france24.com/fr/rss",
+    "https://feeds.leparisien.fr/leparisien/rss",
+    "https://www.ouest-france.fr/rss/une",
+    "https://www.europe1.fr/rss.xml",
+    "https://partner-feeds.20min.ch/rss/20minutes",
+    "https://www.afp.com/fr/actus/afp_actualite/792,31,9,7,33/feed"
+]
+                            </code>
+                        </pre>
+
+                    </div>
+                    <p>Un rapide script pour récupérer les titres et descriptions de tous les articles avec l'utilisation des librairies BeautifulSoup, Pandas et requests.</p>
+                    <div class="box">
+                        <pre>
+                            <code class="language-python">
+def scrap(feed_urls):
+    news_list = pd.DataFrame(columns=('title', 'summary'))
+
+    for feed_url in feed_urls:
+        res = requests.get(feed_url)
+        feed = BeautifulSoup(res.content, features='xml')
+
+        articles = feed.findAll('item')       
+        for article in articles:
+            title = BeautifulSoup(article.find('title').get_text(), "html").get_text()
+            summary = ""
+            if (article.find('description')):
+                summary = BeautifulSoup(article.find('description').get_text(), "html").get_text()
+                news_list.loc[len(news_list)] = [title, summary]
+
+    return news_list
+                            </code>
+                        </pre>
+                    </div>
+                    <p class="mt-3">Il faut ensuite traiter le texte des articles à l'aide des librairies Spacy et NLTK qui parsent le texte en enlevant les charactères spéciaux, puis qui tokenize chaques termes et enfin qui les lemmatisent. On calcule aussi le vocabulaire ainsi que ses fréquences selon le corpus.</p>
+                    <div class="box">
+                        <pre>
+                            <code class="language-python">
+def process_text(docs, lang='fr'):
+    if (lang=='fr'):
+        nlp = spacy.load('fr_core_news_sm')
+    elif (lang=='en'):
+        nlp = spacy.load('en_core_web_sm')
+
+    # Utility functions
+    punctuation_chars =  [
+        chr(i) for i in range(sys.maxunicode)
+        if category(chr(i)).startswith("P")
+    ]
+    def tokenize(text):
+        text = "".join(list(filter(lambda x: x not in [*string.punctuation, *punctuation_chars], text)))
+        tokens = nltk.word_tokenize(text)
+        words = list(filter(lambda x: x not in [stopwords.words('english') + stopwords.words('french')], tokens))
+        return list(map(lambda x: x.lower(), words))
+
+    def preprocess_text(documents):
+        docs = list(map(lambda doc: tokenize(doc), documents))
+        return docs
+
+    # Clean and tokenize docs
+    tokenized_docs = preprocess_text(docs)
+
+    # Lemmanize docs
+    def lemmanize(doc):
+        doc = list(filter(lambda token: token.lemma_ not in nlp.Defaults.stop_words, doc))
+        return list(map(lambda token: token.lemma_, doc))
+
+    lemma_docs = list(map(lambda doc: lemmanize(nlp(" ".join(doc))), tokenized_docs))
+
+    def get_vocabulary_frequency(documents):
+        vocabulary = dict()
+        for doc in documents:
+            for word in doc:
+                print(word)
+                if word in list(vocabulary.keys()):
+                    vocabulary[word] += 1
+                else:
+                    vocabulary[word] = 1
+
+        return vocabulary
+
+    voc = get_vocabulary_frequency(lemma_docs)
+
+    return lemma_docs, voc
+                            </code>
+                        </pre>
+                    </div>
+                    <h3>Data Visualization</h3>
+                    <p>Afin de visualiser le network, il faut dans un premier temps lister les liens (edges) entre chaque terme (node). Pour ce faire, on utilise la librairie NLTK et sa méthode pour calculer les bigrammes (i.e. les paires de termes voisins dans une phrase). Chaque bigramme représente donc un <strong>lien</strong> tandis que chaque terme représente un <strong>noeud</strong> dont la taille dépend de sa fréquence dans le corpus.</p>
+                    <div class="box">
+                        <pre>
+                            <code class="language-python">
+def graphnet(docs, voc, min_freq=5):
+    # Filter voc with min_freq
+    filtered_voc = dict(filter(lambda elem: elem[1] > min_freq, voc.items()))
+
+    term_to_voc_id = dict()
+    for i, term in enumerate(filtered_voc):
+        term_to_voc_id[term] = i
+
+    # List bigrams (edges)
+    finder = nltk.BigramCollocationFinder.from_documents(docs)
+    bigram_measures = nltk.collocations.BigramAssocMeasures()
+    bigrams = list(finder.score_ngrams(bigram_measures.raw_freq))
+    bigrams = list(map(lambda x: x[0], bigrams))
+
+    # Filter the bigrams with filtered_voc elements and replace by terms by their id
+    bigrams = list(filter(lambda x: x[0] in filtered_voc.keys() and x[1] in filtered_voc.keys(), bigrams))
+    bigrams = list(map(lambda x: (term_to_voc_id[x[0]], term_to_voc_id[x[1]]), bigrams))
+
+    # Set nodes sizes
+    sizes = list(filtered_voc.values())
+
+    # Output nodes and edges
+    with open('nodes.csv', 'w', encoding='UTF8', newline='') as f:
+        writer = csv.writer(f)
+
+        # write the header
+        writer.writerow(['id', 'label', 'size'])
+
+        # write rows
+        for i, term in enumerate(filtered_voc.keys()):
+            writer.writerow([i, term, sizes[i]])
+
+    with open('edges.csv', 'w', encoding='UTF8', newline='') as f:
+        writer = csv.writer(f)
+
+        # write the header
+        writer.writerow(['id', 'source', 'target'])
+
+        # write rows
+        for i, edge in enumerate(bigrams):
+            (source, target) = edge
+            writer.writerow([i, source, target])
+                            </code>
+                        </pre>
+                    </div>
+                    <p>On peut ensuite afficher le network à l'aide de la libraire D3.js, comme visible en haut de la page. On peut aussi utiliser le logiciel <a href="https://gephi.org/">Gephi</a> permettant la manipulation de large set de données, inenvisageable autrement pour le set des articles US 2022 (~250,000 articles). Ci-dessous le résultat sur Gephi pour les actualités françaises du 30 janvier 2023.</p>
+                    <img src="../static/images/projets/rss-trends/rss-trends.png" class="img-fluid mt-2">
                 </div>
             </div>
         </div>
@@ -77,9 +232,27 @@
         margin-left: 500px;
         padding: 0;
     }
+    .text-label {
+        font-family: 'GilroyBold';
+    }
     #mynetwork {
       width: 100%;
       min-height: 600px;
+      background-color: white;
+      height: 100vh;
+    }
+    .title {
+        font-family: 'GilroyBold';
+        font-size: 1.5rem;
+    }
+    .language-python {
+        background: none !important;
+        padding: 0 !important;
+    }
+    p {
+        margin: 0;
+        font-size: 1.2rem;
+        text-align: justify;
     }
     @media screen and (max-width: 980px) {
         .aside {
