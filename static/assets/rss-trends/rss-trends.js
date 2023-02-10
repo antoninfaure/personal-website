@@ -1,10 +1,10 @@
-import links from "./02-2023/links.json" assert { type: "json" }
-import nodes from "./02-2023/nodes.json" assert { type: "json" }
+import links from "./10-02-2023/edges.json" assert { type: "json" }
+import nodes from "./10-02-2023/nodes.json" assert { type: "json" }
 
 const width = $('#mynetwork').innerWidth()
 const height = $('#mynetwork').innerHeight()
 
-var initial_zoom = d3.zoomIdentity.translate(600, 300).scale(0.04);
+var initial_zoom = d3.zoomIdentity.translate(600, 400).scale(0.04);
 
 //add zoom capabilities 
 var zoom_handler = d3.zoom().on("zoom", zoom_actions);
@@ -110,7 +110,7 @@ svg.append('g')
     .attr('x', width / 2)
     .attr('y', 50)
     .attr('text-anchor', 'middle')
-    .text('Actualités FR du 30 janvier 2023');
+    .text('Actualités FR du 10 février 2023');
 
 function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
