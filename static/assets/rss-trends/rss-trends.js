@@ -9,16 +9,21 @@ const svg = d3.select('svg')
   .attr('width', width)
   .attr('height', height)
   
+var max_value = 0
+for (node of nodes) {
+  if (node.size > max_value) max_value = node.size;
+}
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+var color = d3.scaleLinear().domain([1, max_value])
+  .range(["yellow", "red"])
 
 const radius = 20
 
 var simulation = d3.forceSimulation()
   .force("link", d3.forceLink().id(function(d) { return d.id; }))
-  .force("charge", d3.forceManyBody().strength(d => { return -d.size*500 }))
+  .force("charge", d3.forceManyBody().strength(d => { return -d.size*1000 }))
   .force("center", d3.forceCenter(width / 2, height / 2))
-  .force("collide",  d3.forceCollide().radius(d => { return Math.log2(d.size*radius + 2)*radius }).iterations(3))
+  .force("collide",  d3.forceCollide().radius(d => { return (d.size + 2)*radius }).iterations(3))
 
   var g = svg.append("g")
     .attr("class", "everything");
@@ -36,13 +41,13 @@ var simulation = d3.forceSimulation()
     .selectAll("line")
     .data(links)
     .enter().append("line")
-      .attr("stroke-width", function(d) { 2 })
+      .attr("stroke-width", function(d) { 4 })
       .style('stroke', 'white')
 
 
   var circles = node.append("circle")
     .attr("r",  function(d) { 
-      return Math.log2(d.size*radius + 2)*radius
+      return d.size*radius
     })
     .attr("fill", function(d) { 
       return color(d.size*radius);

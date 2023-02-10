@@ -62,6 +62,7 @@ var simulation = d3.forceSimulation()
       .text(function(d) {
         return d.type === 'user' ? d.name : d.label
       })
+      .style("font-size", function(d) { return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 24) + "px"; })
       .attr('x', 6)
       .attr('y', 3)
       .style('fill', 'white')

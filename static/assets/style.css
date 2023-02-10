@@ -102,6 +102,12 @@ h3 {
 h6 {
     font-size: 1.5rem;
 }
+.f-gilroy-l {
+    font-family: 'GilroyLight';
+}
+.f-gilroy-b {
+    font-family: 'GilroyBold';
+}
 @media screen and (max-width: 1300px) { 
     h3 {
         font-size: 2rem;
