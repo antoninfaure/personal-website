@@ -146,7 +146,7 @@ def process_text(docs, lang='fr'):
                         </pre>
                     </div>
                     <h3>Data Visualization</h3>
-                    <p>Afin de visualiser le network, il faut dans un premier temps lister les liens (edges) entre chaque terme (node). Pour ce faire, on utilise la librairie NLTK et sa méthode pour calculer les bigrammes (i.e. les paires de termes voisins dans une phrase). Chaque bigramme représente donc un <strong>lien</strong> tandis que chaque terme représente un <strong>noeud</strong> dont la taille dépend de sa fréquence dans le corpus.</p>
+                    <p>Afin de visualiser le network, il faut dans un premier temps lister les liens (edges) entre chaques termes (nodes). Pour ce faire, on utilise la librairie NLTK et sa méthode pour calculer les bigrammes (i.e. les paires de termes voisins dans une phrase). Chaque bigramme représente donc un <strong>lien</strong> tandis que chaque terme représente un <strong>noeud</strong> dont la taille dépend de sa fréquence dans le corpus.</p>
                     <div class="box">
                         <pre>
                             <code class="language-python">
@@ -171,27 +171,32 @@ def graphnet(docs, voc, min_freq=5):
     # Set nodes sizes
     sizes = list(filtered_voc.values())
 
-    # Output nodes and edges
-    with open('nodes.csv', 'w', encoding='UTF8', newline='') as f:
-        writer = csv.writer(f)
+    # Format data
+    nodes = []
+    for i, term in enumerate(filtered_voc.keys()):
+        nodes.append({
+            'id': i,
+            'label': term,
+            'size': sizes[i]
+        })
+    
+    edges = []
+    for i, edge in enumerate(bigrams):
+        (source, target) = edge
+        edges.append({
+            'id': i,
+            'source': source,
+            'target': target
+        })
 
-        # write the header
-        writer.writerow(['id', 'label', 'size'])
+    
+    # Write JSON files
+    with open('nodes.json', 'w', encoding='UTF8', newline='') as f:
+        writer = json.dump(nodes, f, ensure_ascii=False)
 
-        # write rows
-        for i, term in enumerate(filtered_voc.keys()):
-            writer.writerow([i, term, sizes[i]])
-
-    with open('edges.csv', 'w', encoding='UTF8', newline='') as f:
-        writer = csv.writer(f)
-
-        # write the header
-        writer.writerow(['id', 'source', 'target'])
-
-        # write rows
-        for i, edge in enumerate(bigrams):
-            (source, target) = edge
-            writer.writerow([i, source, target])
+    
+    with open('edges.json', 'w', encoding='UTF8', newline='') as f:
+        writer = json.dump(edges, f, ensure_ascii=False)
                             </code>
                         </pre>
                     </div>
