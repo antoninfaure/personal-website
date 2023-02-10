@@ -6,38 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Antonin Faure">
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Custom -->
     <link type="text/css" rel="stylesheet" href="../static/assets/style.css"/>
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
     <div class="row m-0 p-0 fill">
         <div class="aside shadow">
             <a href="../index.html" class="btn btn-light m-3">Accueil</a>
             <div class="col-12 p-3">
-                <h3>EPFL Stickers</h3>
-                <p>Une web application ayant pour but de faire une chasse aux stickers à l'EPFL. Chaque photo de sticker est géolocalisée et pourra par la suite servir à cartographier ces derniers sur le campus. Toute une infrastructure de modération rend ce site community based facilitant le scaling. Un système de badge, gagnés en fonction des stickers trouvés, peut aussi servir à des événements spéciaux comme une chasse à sticker spécial éphémère.</p>
+                <h3>RSS Trends</h3>
+                <p>Objectif : faire une analyse des flux RSS des grands médias français pour créer un Text Network représentant les tendances de l'actualité ainsi que les liens entre les termes les plus fréquents.</p>
             </div>
             <div class="col-12 p-3">
                 <h5>Made with</h5>
-                <button class="btn btn-danger my-2">MongoDB</button>
-                <button class="btn btn-primary my-2">Express</button>
-                <button class="btn btn-success my-2">Node.js</button>
+                <button class="btn btn-danger my-2">Jupyter Notebook</button>
+                <a href="https://gephi.org/" class="btn btn-primary my-2">Gephi</a>
             </div>
         </div>
         <div class="container-right">
-            <img src="../static/images/realisations/stickers-flep/stickers1.png" class="img-fluid">
-            <img src="../static/images/realisations/stickers-flep/stickers2.png" class="img-fluid">
-            <img src="../static/images/realisations/stickers-flep/stickers3.png" class="img-fluid">
-            <img src="../static/images/realisations/stickers-flep/stickers4.png" class="img-fluid">
-            <img src="../static/images/realisations/stickers-flep/stickers5.png" class="img-fluid">
-            <img src="../static/images/realisations/stickers-flep/stickers6.png" class="img-fluid">
+            <div class="row m-0 p-0">
+                <div class="col-12 m-0 p-4">
+                    <svg id="mynetwork"></svg>
+                    <h4>Data Mining</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime accusantium nisi, voluptatum porro quo voluptatem cumque hic aperiam, fuga rem eligendi alias quas, repellat impedit exercitationem quasi tempore dolore earum!</p>
+                    <h4>Data Visualization</h4>
+                    <img src="../static/images/projets/rss-trends/rss-trends.png" class="img-fluid">
+                </div>
+            </div>
         </div>
     </div>
 </body>
+<script type="module" src="../static/assets/rss-trends/rss-trends.js"></script>
 
 <style>
     html, body {
@@ -55,13 +64,6 @@
         color: inherit;
         text-decoration: inherit;
     }
-    #myVideo {
-        z-index: -1;
-        left: 0;
-        top: 0;
-        width: 100%; 
-        height: auto;
-    }
     .aside {
         position: fixed;
         width: 500px;
@@ -72,6 +74,10 @@
     .container-right {
         margin-left: 500px;
         padding: 0;
+    }
+    #mynetwork {
+      width: 100%;
+      min-height: 600px;
     }
     @media screen and (max-width: 980px) {
         .aside {
@@ -86,4 +92,3 @@
     }
 </style>
 </html>
-
