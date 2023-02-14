@@ -40,7 +40,13 @@
         </div>
         <div class="container-right">
             <svg id="mynetwork"></svg>
+            
             <div class="row m-0 p-0">
+                <select name="date" id="dataInput" class="text-center custom-select custom-select-lg mx-3 mt-3">
+                  </select>
+                <!--<input id="dataInput" type="text" placeholder="DD-MM-YYYY" class="form-input text-center my-2 mx-auto">-->
+                <div class="alert w-100 text-center" id="dateAlert">
+                </div>
                 <div class="col-12 m-0 p-5">
                     <h3>Data Mining</h3>
                     <p>Pour récupérer des articles d'actualités françaises je me suis basé sur les flux RSS des médias suivants : </p>
@@ -208,7 +214,6 @@ def graphnet(docs, voc, min_freq=5):
     </div>
 </body>
 <script type="module" src="../static/assets/rss-trends/rss-trends.js"></script>
-
 <style>
     html, body {
         min-height: 100%;
@@ -271,5 +276,39 @@ def graphnet(docs, voc, min_freq=5):
             width: 100%;
         }
     }
+    .ticks {
+  font: 12px sans-serif;
+  fill: black;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+  stroke-linecap: round;
+}
+
+.track {
+  stroke: #000;
+  stroke-opacity: 0.3;
+  stroke-width: 10px;
+}
+
+.track-inset {
+  stroke: #ddd;
+  stroke-width: 8px;
+}
+
+.track-overlay {
+  pointer-events: stroke;
+  stroke-width: 50px;
+  cursor: pointer;
+}
+
+.handle {
+  fill: #fff;
+  stroke: #000;
+  stroke-opacity: 0.5;
+  stroke-width: 1.25px;
+}
 </style>
 </html>
