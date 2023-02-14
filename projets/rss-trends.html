@@ -39,14 +39,10 @@
             </div>
         </div>
         <div class="container-right">
-            <svg id="mynetwork"></svg>
+            <!--<svg id="mynetwork"></svg>-->
+            <iframe src="https://antoninfaure.github.io/rssTrends/" frameBorder="0" id="iframeNetwork"></iframe>
             
             <div class="row m-0 p-0">
-                <select name="date" id="dataInput" class="text-center custom-select custom-select-lg mx-3 mt-3">
-                  </select>
-                <!--<input id="dataInput" type="text" placeholder="DD-MM-YYYY" class="form-input text-center my-2 mx-auto">-->
-                <div class="alert w-100 text-center" id="dateAlert">
-                </div>
                 <div class="col-12 m-0 p-5">
                     <h3>Data Mining</h3>
                     <p>Pour récupérer des articles d'actualités françaises je me suis basé sur les flux RSS des médias suivants : </p>
@@ -246,7 +242,7 @@ def graphnet(docs, voc, min_freq=5):
     .text-label {
         font-family: 'GilroyBold';
     }
-    #mynetwork {
+    #iframeNetwork {
       width: 100%;
       min-height: 600px;
       background-color: white;
