@@ -10,6 +10,7 @@ body {
   flex-flow: column;
   height: 100vh;
 }
+
 @media (prefers-color-scheme: dark) {
   body {
     background: black;

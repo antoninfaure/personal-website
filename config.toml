@@ -1,4 +1,50 @@
-baseURL = 'https://antoninfaure.ch'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseurl = 'https://antoninfaure.ch'
+DefaultContentLanguage = "en"
 theme = 'beautifulhugo'
+googleAnalytics='G-DNX97H63H6'
+
+[Params]
+  homeTitle = "Antonin Faure"
+  mainSections = ["post","posts"]
+  logo = "images/photoCV.jpg"
+  useHLJS = true
+  dateFormat = "January 2, 2006"
+  socialShare = true
+  hideAuthor = true
+  custom_css = ["custom.css"]
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+  [languages.fr]
+    contentDir = "content/fr"
+    
+[Author]
+  name = "Antonin Faure"
+  website = "antoninfaure.ch"
+  email = "antonin.faure6@gmail.com"
+  github = "antoninfaure"
+  gitlab = "antonin_faure"
+  linkedin = "antonin-faure-00884016b"
+  telegram = "antonin_faure"
+  medium = "antonin.faure"
+
+[[menu.main]]
+    name = "Home"
+    url = ""
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "#about"
+    weight = 2
+
+[[menu.main]]
+    name = "Posts"
+    url = "posts"
+    weight = 3
+
+[[menu.main]]
+    url = "projects"
+    name = "Projects"
+    weight = 4
