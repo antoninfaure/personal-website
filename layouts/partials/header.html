@@ -60,14 +60,12 @@
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-10 text-center">
             <div class="{{ .Type }}-heading">
-              {{ if eq .Type "list" }}
+              {{ if eq .IsPage true }}
                 <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
               {{ else }}
                 <h1>{{ with $title }}{{.}}{{ else }}<br/>{{ end }}</h1>
               {{ end }}
-              {{ if ne .Type "post" }}
-                <hr class="small">
-              {{ end }}
+              <hr class="small">
               {{ if $subtitle }}
                 {{ if eq .Type "page" }}
                   <span class="{{ .Type }}-subheading">{{ $subtitle }}</span>
@@ -75,7 +73,7 @@
                   <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
                 {{ end }}
               {{ end }}
-              {{ if eq .Type "post" }}
+              {{ if and (ne .Type "page") (eq .IsPage true)  }}
                 {{ partial "post_meta.html" . }}
               {{ end }}
             </div>

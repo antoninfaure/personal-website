@@ -85,7 +85,7 @@ h6 {
 .asso h5 > span:nth-child(2) {
     font-style: italic;
 }
-.card {
+.asso {
     background: white;
     color: #080808;
     border-radius: 3em;

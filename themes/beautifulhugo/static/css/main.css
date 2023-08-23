@@ -11,12 +11,6 @@ body {
   height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: black;
-    color: white;
-  }
-}
 .container[role=main] {
   margin-bottom:50px;
   flex: 1 0 auto;
@@ -161,12 +155,6 @@ figure:not(.dark) img, img.white {
   border-bottom: 1px solid #EAEAEA;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  .navbar-custom {
-    background: #505050;
-    border-bottom: 1px solid #AAA;
-  }
-}
 
 .navbar-custom .nav li a {
   text-transform: uppercase;
@@ -178,13 +166,6 @@ figure:not(.dark) img, img.white {
 .navbar-custom .nav li a {
   font-weight: 800;
   color: #404040;
-}
-
-@media (prefers-color-scheme: dark) {
-  .navbar-custom .navbar-brand,
-  .navbar-custom .nav li a {
-    color: #b0b0b0;
-  }
 }
 
 .navbar-custom .navbar-brand:hover,
@@ -336,17 +317,6 @@ figure:not(.dark) img, img.white {
     border-width: 0 1px 1px;
   }
 }
-@media (prefers-color-scheme: dark) {
-  .navbar-custom .nav .navlinks-container:hover {
-    background: #666;
-  }
-  .navbar-custom .nav .navlinks-container .navlinks-children a {
-    border: 1px solid #AAA;
-  }
-  .navbar-custom .nav .navlinks-container .navlinks-children a {
-    background: #444;
-  }
-}
 
 /* --- Footer --- */
 
@@ -403,16 +373,6 @@ footer div.disclaimer {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  footer {
-    background: #444;
-    border-top: 1px #AAA solid;
-  }
-  footer a {
-    color: #AAA;
-  }
-}
-
 /* --- Post preview --- */
 
 .post-preview {
@@ -432,11 +392,6 @@ footer div.disclaimer {
 .post-preview a {
   text-decoration: none;
   color: #404040;
-}
-@media (prefers-color-scheme: dark) {
-  .post-preview a {
-    color: #AAA;
-  }
 }
 
 .post-preview a:focus,

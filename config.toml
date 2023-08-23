@@ -5,10 +5,8 @@ googleAnalytics='G-DNX97H63H6'
 
 [Params]
   homeTitle = "Antonin Faure"
-  mainSections = ["post","posts"]
-  logo = "images/photoCV.jpg"
+  mainSections = ["post", "project"]
   useHLJS = true
-  dateFormat = "January 2, 2006"
   socialShare = true
   hideAuthor = true
   custom_css = ["custom.css"]
@@ -16,8 +14,43 @@ googleAnalytics='G-DNX97H63H6'
 [languages]
   [languages.en]
     contentDir = "content/en"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        url = ""
+        weight = 1
+        name = "Home"
+      [[languages.en.menu.main]]
+        url = "page/about"
+        weight = 2
+        name = "About"
+      [[languages.en.menu.main]]
+        url = "post"
+        weight = 3
+        name = "Posts"
+      [[languages.en.menu.main]]
+        url = "project"
+        weight = 4
+        name = "Projects"
+
   [languages.fr]
     contentDir = "content/fr"
+    [languages.fr.menu]
+      [[languages.fr.menu.main]]
+        url = ""
+        weight = 1
+        name = "Accueil"
+      [[languages.fr.menu.main]]
+        url = "page/about"
+        weight = 2
+        name = "A propos"
+      [[languages.fr.menu.main]]
+        url = "post"
+        weight = 3
+        name = "Posts"
+      [[languages.fr.menu.main]]
+        url = "project"
+        weight = 4
+        name = "Projets"
     
 [Author]
   name = "Antonin Faure"
@@ -28,23 +61,3 @@ googleAnalytics='G-DNX97H63H6'
   linkedin = "antonin-faure-00884016b"
   telegram = "antonin_faure"
   medium = "antonin.faure"
-
-[[menu.main]]
-    name = "Home"
-    url = ""
-    weight = 1
-
-[[menu.main]]
-    name = "About"
-    url = "#about"
-    weight = 2
-
-[[menu.main]]
-    name = "Posts"
-    url = "posts"
-    weight = 3
-
-[[menu.main]]
-    url = "projects"
-    name = "Projects"
-    weight = 4

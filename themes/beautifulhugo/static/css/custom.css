@@ -1,6 +1,30 @@
+a {
+    color: inherit;
+}
+
 body.dark {
     background-color: #080808;
     color: white;
+}
+
+footer {
+    background-color: #080808;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container[role="main"] {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+footer a {
+    color: white;
+}
+
+body:not(.dark) footer a i:not(.fa-circle) {
+    color: #080808;
 }
 
 body.dark footer {
@@ -8,16 +32,25 @@ body.dark footer {
     color: #080808;
 }
 
-a {
-    color: inherit;
+body.dark footer a:not(:hover) {
+    color: #080808;
 }
 
+body:not(.dark) footer a:hover {
+    color: #7ae1e8;
+}
 body.dark .post-preview a:not(:hover) {
     color: white;
 }
 
+/* Avatat */
+
 .orbit-icon {
     fill: #080808;
+}
+
+body.dark .orbit-icon {
+    fill: white;
 }
 
 .avatar {
@@ -25,15 +58,99 @@ body.dark .post-preview a:not(:hover) {
     margin: 0 auto;
     display: block;
 }
-body.dark .orbit-icon {
-    fill: white;
+
+.avatar {
+    transform: scale(0.9, 0.9);
+    transition: transform 0.2s ease-in;
 }
 
+.avatar__foreground {
+    transform-origin: 50% 50%;
+    transform: translateY(4px) scale(1, 1);
+    transition: transform 0.2s ease-in;
+}
+
+.avatar:hover {
+    transform: scale(1, 1);
+}
+
+.avatar:hover .avatar__foreground {
+    transform: translateY(-7px) scale(1.05, 1.05);
+}
+
+/* Associations */
+
+div > .asso {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: auto;
+}
+.asso {
+    background: #080808;
+    color: white;
+    border-radius: 3em;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    font-size: .9em;
+}
+
+body.dark .asso {
+    background: white;
+    color: #080808;
+}
+
+.asso .card-body {
+    padding: 1.4em 2.4em;
+    min-height: calc(100px + 2*1.4em);
+}
+
+.asso p {
+    text-align: justify;
+}
+
+.asso-pic {
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin-right: 20px;
+}
+
+.asso h5 {
+    font-size: 1em;
+}
+.asso h5 > span:nth-child(1) {
+    font-weight: 900;
+}
+.asso h5 > span:nth-child(2) {
+    font-style: italic;
+}
+
+/* Navbar */ 
+
+.navbar {
+    background-color: #080808;
+    color: white;
+}
+
+.navbar .navbar-nav li a {
+    color: white;
+}
+
+body.dark .navbar {
+    background-color: white;
+    color: #080808;
+}
+
+body.dark .navbar .navbar-nav li a {
+    color: #080808;
+}
 .navbar-right {
     display: flex;
     align-items: center;
     padding: 0 30px;
 }
+
 /* Dark Mode Switch */
 
 .js-toggle-wrapper {
@@ -71,8 +188,12 @@ body.dark .orbit-icon {
     height: 24px;
     padding: 0;
     border-radius: 30px;
-    background-color: hsl(222, 14%, 7%);
+    background-color: white;
     transition: all 0.2s ease;
+}
+
+.js-toggle--checked .js-toggle-track {
+    background-color: hsl(222, 14%, 7%)
 }
 
 .js-toggle-track-check {
@@ -119,7 +240,7 @@ body.dark .orbit-icon {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background-color: #fafafa;
+    background-color: #e3e3e3;
     box-sizing: border-box;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     transform: translateX(0);

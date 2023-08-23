@@ -2,8 +2,12 @@
 <div class="container" role="main">
   <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10">
-      <article role="main" class="blog-post">
+      <article role="main" class="blog-post">        
         {{ .Content }}
+        <!-- If it's the about page -->
+        {{ if and (eq .Slug "about") (eq .Type "page") }}
+        {{ partial "associations.html" . }}
+        {{ end }}
 
         {{ if .Params.tags }}
           <div class="blog-tags">

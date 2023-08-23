@@ -1,0 +1,22 @@
+{{ if isset .Site.Data "associations" }}
+<div class="row m-0 p-0">
+    {{ range .Site.Data.associations }}
+    {{ range $i, $asso := . }}
+    {{ if isset . $.Lang }}
+    {{ $asso := index (index . $.Lang) 0 }}
+    <div class="col-12">
+        <div class="asso">
+            <div class="card-body">
+                <a target="_blank" href="{{ $asso.link }}"><img class="asso-pic" src="{{ $asso.img }}"></a>
+                <h5><span><a target="_blank" href="{{ $asso.link }}">{{ $asso.name }}</a></span> ·
+                    <span>{{ $asso.role }}</span> · <span>{{ $asso.year }}</span>
+                </h5>
+                <p>{{ $asso.description | markdownify }}</p>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</div>
+{{ end }}
