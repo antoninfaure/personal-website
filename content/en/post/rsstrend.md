@@ -17,6 +17,8 @@ Analyzing RSS feeds from major French media outlets to create a Text Network dep
 {{<span class="btn btn-danger mb-2" inner="Jupyter Notebook">}}
 {{<link href="https://d3js.org" class="btn btn-primary mb-2" target="_blank" inner="D3.js">}}
 
+
+{{<link href="https://antoninfaure.github.io/rssTrends/" target="_blank" class="btn btn-success my-3" inner="Live Demo">}}
 {{<iframe src="https://antoninfaure.github.io/rssTrends/" class="w-100" >}}
 
 ## Data Mining
