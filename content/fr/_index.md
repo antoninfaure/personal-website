@@ -12,6 +12,6 @@ Habite à Lausanne, Suisse \
 Cyclisme \
 Associatif \
 Développement Web \
-Biérologie \
+Dégustation de bière \
 Technique de scène \
 Cinématographie

@@ -3,7 +3,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10">
       <article role="main" class="blog-post">        
-        {{ .Content }}
+        {{ .Content | safeHTML }}
         <!-- If it's the about page -->
         {{ if and (eq .Slug "about") (eq .Type "page") }}
         {{ partial "associations.html" . }}

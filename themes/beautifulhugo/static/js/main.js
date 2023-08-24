@@ -96,7 +96,7 @@ var main = {
         if (position !== undefined) {
           img.css("background-position", position);
         }
-        $(".intro-header.big-img").prepend(img);
+        $(".intro-header.big-img .img").prepend(img);
         setTimeout(function(){ img.css("opacity", "1"); }, 50);
 
       // after the animation of fading in the new image is done, prefetch the next one
@@ -131,13 +131,13 @@ var main = {
   },
 
   setImg : function(src, desc, position) {
-  $(".intro-header.big-img").css("background-image", 'url(' + src + ')');
+  $(".intro-header.big-img .img").css("background-image", 'url(' + src + ')');
   if (position !== undefined) {
-    $(".intro-header.big-img").css("background-position", position);
+    $(".intro-header.big-img .img").css("background-position", position);
   }
   else {
     // Remove background-position if added to the prev image.
-    $(".intro-header.big-img").css("background-position", "");
+    $(".intro-header.big-img .img").css("background-position", "");
   }
   if (typeof desc !== typeof undefined && desc !== false) {
     // Check for Markdown link

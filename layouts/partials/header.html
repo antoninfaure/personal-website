@@ -29,22 +29,23 @@
   <header class="header-section {{ if $bigimg }}has-img{{ end }}">
     {{ if $bigimg }}
       {{ $firstimg := index $bigimg 0 }}
-      <div class="intro-header big-img" style="background-image: url('{{$firstimg.src}}');">
+      <div class="intro-header big-img">
+        <div class="img" style="background-image: url('{{$firstimg.src}}');"></div>
         {{ $subtitle := $.Scratch.Get "subtitle" }}
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-10">
-              <div class="{{ .Type }}-heading">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="{{ if ne .Type "page"}}post{{ else }}page{{end}}-heading">
                 <h1>{{ with $.Scratch.Get "title" }}{{.}}{{ else }}<br/>{{ end }}</h1>
                   {{ if $subtitle }}
+                    <hr class="small">
                     {{ if eq .Type "page" }}
-                      <hr class="small">
-                      <span class="{{ .Type }}-subheading">{{ $subtitle }}</span>
+                      <span class="{{ if ne .Type "page"}}post{{ else }}page{{end}}-subheading">{{ $subtitle }}</span>
                     {{ else }}
-                      <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
+                      <h2 class="{{ if ne .Type "page"}}post{{ else }}page{{end}}-subheading">{{ $subtitle }}</h2>
                     {{ end }}
                   {{ end }}
-                  {{ if eq .Type "post" }}
+                  {{ if and (ne .Type "page") (eq .IsPage true) }}
                     {{ partial "post_meta.html" . }}
                   {{ end }}
               </div>
@@ -53,24 +54,23 @@
         </div>
         <span class="img-desc" style="display: {{ cond (isset $firstimg "desc") "inline" "none"}};">{{$firstimg.desc}}</span>
       </div>
-    {{end}}
-    {{ if $title }}
+    {{ else if $title }}
     <div class="intro-header no-img">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-10 text-center">
-            <div class="{{ .Type }}-heading">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="{{ if ne .Type "page"}}post{{ else }}page{{end}}-heading">
               {{ if eq .IsPage true }}
                 <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
               {{ else }}
                 <h1>{{ with $title }}{{.}}{{ else }}<br/>{{ end }}</h1>
               {{ end }}
-              <hr class="small">
               {{ if $subtitle }}
+                <hr class="small">
                 {{ if eq .Type "page" }}
-                  <span class="{{ .Type }}-subheading">{{ $subtitle }}</span>
+                  <span class="{{ if ne .Type "page"}}post{{ else }}page{{end}}-subheading">{{ $subtitle }}</span>
                 {{ else }}
-                  <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
+                  <h2 class="{{ if ne .Type "page"}}post{{ else }}page{{end}}-subheading">{{ $subtitle }}</h2>
                 {{ end }}
               {{ end }}
               {{ if and (ne .Type "page") (eq .IsPage true)  }}

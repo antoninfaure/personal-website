@@ -5,7 +5,7 @@ googleAnalytics='G-DNX97H63H6'
 
 [Params]
   homeTitle = "Antonin Faure"
-  mainSections = ["post", "project"]
+  mainSections = ["post", "work"]
   useHLJS = true
   socialShare = true
   hideAuthor = true
@@ -28,9 +28,9 @@ googleAnalytics='G-DNX97H63H6'
         weight = 3
         name = "Posts"
       [[languages.en.menu.main]]
-        url = "project"
+        url = "work"
         weight = 4
-        name = "Projects"
+        name = "Work"
 
   [languages.fr]
     contentDir = "content/fr"
@@ -48,9 +48,9 @@ googleAnalytics='G-DNX97H63H6'
         weight = 3
         name = "Posts"
       [[languages.fr.menu.main]]
-        url = "project"
+        url = "work"
         weight = 4
-        name = "Projets"
+        name = "Réalisations"
     
 [Author]
   name = "Antonin Faure"
@@ -61,3 +61,4 @@ googleAnalytics='G-DNX97H63H6'
   linkedin = "antonin-faure-00884016b"
   telegram = "antonin_faure"
   medium = "antonin.faure"
+  kaggle = "antoninfaure"

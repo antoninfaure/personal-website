@@ -136,6 +136,7 @@ figure:not(.dark) img, img.white {
 
 .img-title {
   width: 100%;
+  margin-bottom: 1em;
 }
 
 .disqus-comments {

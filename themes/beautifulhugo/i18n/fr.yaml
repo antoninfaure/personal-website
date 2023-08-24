@@ -74,3 +74,9 @@
 # Related posts
 - id: seeAlso
   translation: "Suggestions de lecture :"
+
+# Post types
+- id: post
+  translation: "Post"
+- id: work
+  translation: "Réalisation"
