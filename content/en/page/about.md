@@ -7,7 +7,7 @@ slug: 'about'
 
 {{< columns >}}
 
-{{< image src="/images/photoCV.jpg" alt="Example image." size="2" >}}
+{{< image src="/images/photoCV.webp" alt="Example image." size="2" >}}
 
 {{< column >}}
 

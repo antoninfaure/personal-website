@@ -38,7 +38,6 @@
               <div class="{{ if ne .Type "page"}}post{{ else }}page{{end}}-heading">
                 <h1>{{ with $.Scratch.Get "title" }}{{.}}{{ else }}<br/>{{ end }}</h1>
                   {{ if $subtitle }}
-                    <hr class="small">
                     {{ if eq .Type "page" }}
                       <span class="{{ if ne .Type "page"}}post{{ else }}page{{end}}-subheading">{{ $subtitle }}</span>
                     {{ else }}
