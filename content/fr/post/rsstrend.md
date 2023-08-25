@@ -6,6 +6,8 @@ bigimg: [{ src: "/images/post/rss-trends/rss-trends.webp"}]
 image: "/images/post/rss-trends/rss-trends.webp"
 tags: ["dataviz", "nlp", "python", "scraping"]
 summary: Analyse des flux RSS des grands médias français pour créer un Text Network représentant les tendances de l'actualité ainsi que les liens entre les termes les plus fréquents.
+preview: /images/post/rss-trends/rss-trends.webp
+type: post
 ---
 
 {{<link href="https://github.com/antoninfaure/rssTrends" class="btn btn-default my-3" target="_blank" inner="GitHub">}}

@@ -1,0 +1,24 @@
+{
+    "frontMatter.content.pageFolders": [
+        {
+            "title": "content",
+            "path": "[[workspace]]/content"
+        },
+        {
+            "title": "layouts",
+            "path": "[[workspace]]/layouts"
+        },
+        {
+            "title": "data",
+            "path": "[[workspace]]/data"
+        },
+        {
+            "title": "en",
+            "path": "[[workspace]]/content/en"
+        },
+        {
+            "title": "fr",
+            "path": "[[workspace]]/content/fr"
+        }
+    ]
+}

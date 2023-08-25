@@ -2,10 +2,17 @@
 title: RSS Trends
 subtitle: Finding Topics in French News using RSS Feeds
 date: 2023-08-24
-bigimg: [{ src: "/images/post/rss-trends/rss-trends.webp"}]
-image: "/images/post/rss-trends/rss-trends.webp"
-tags: ["dataviz", "nlp", "python", "scraping"]
+bigimg:
+  - src: /images/post/rss-trends/rss-trends.webp
+image: /images/post/rss-trends/rss-trends.webp
+tags:
+  - dataviz
+  - nlp
+  - d3js
+  - python
+  - scraping
 summary: Analyzing RSS feeds from major French media outlets to create a Text Network depicting news trends and connections between most frequent terms.
+preview: /images/post/rss-trends/rss-trends.webp
 ---
 
 {{<link href="https://github.com/antoninfaure/rssTrends" class="btn btn-default my-3" target="_blank" inner="GitHub">}}
