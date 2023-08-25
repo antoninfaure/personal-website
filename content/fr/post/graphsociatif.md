@@ -1,7 +1,7 @@
 ---
-title: EPFL GraphSociative
+title: EPFL GraphSociatif
 draft: false
-subtitle: Visualizing EPFL's Associative Network
+subtitle: Visualisation du réseau associatif de l'EPFL
 date: 2023-08-25
 bigimg:
   - src: /images/post/graphsociatif/graphsociatif.webp
@@ -13,41 +13,41 @@ tags:
   - d3js
   - python
   - scraping
-summary: Scraping the EPFL LDAP to visualize the associative network of EPFL using D3.js
+summary: Scraping du LDAP de l'EPFL pour visualiser le réseau associatif de l'EPFL en utilisant D3.js
 ---
 
 {{<link href="https://github.com/antoninfaure/graphsociatif" class="btn btn-default my-3" target="_blank" inner="GitHub">}}
 {{<link href="https://antoninfaure.github.io/graphsociatif" class="btn btn-success my-3" inner="Live Demo" >}}
 {{<iframe src="https://antoninfaure.github.io/graphsociatif" class="w-100" >}}
 
-Have you ever wondered about the intricate connections within EPFL's associations? How do associations interconnect? How many accreditations does individuals have?
+Avez-vous déjà pensé aux liens entres les associations de l'EPFL ? Quelles sont les associations les plus importantes ? Quelles sont les personnes qui sont actives dans plusieurs associations ? Quelles sont les associations qui ont le plus de membres ?
 
-Let's create an interactive visualization to show the relationships between associations and individuals with their accreditations!
+Créons une visualisation interactive qui montre les relations entre les associations et les personnes avec leurs accréditations.
 
-- [Retrieve the list of associations](#retrieve-the-list-of-associations)
-- [Retrieve the list of people in a unit](#retrieve-the-list-of-people-in-a-unit)
-- [Compute unit and user sizes](#compute-unit-and-user-sizes)
-- [Compute links between units and users](#compute-links-between-units-and-users)
-- [Visualize with D3.js](#visualize-with-d3js)
+- [Récupération de la liste des associations](#récupération-de-la-liste-des-associations)
+- [Récupération de la liste des personnes dans une unité](#récupération-de-la-liste-des-personnes-dans-une-unité)
+- [Calcul des tailles d'unités et d'utilisateurs](#calcul-des-tailles-dunités-et-dutilisateurs)
+- [Calcul des liens entre les unités et les utilisateurs](#calcul-des-liens-entre-les-unités-et-les-utilisateurs)
+- [Visualisation avec D3.js](#visualisation-avec-d3js)
 - [Conclusion](#conclusion)
 
 ---
 
-## Retrieve the list of associations
+## Récupération de la liste des associations
 
-After some research on the EPFL website, I found the search-ai.epfl.ch API. It allows you to search for units and people. The API is not publicly documented, but we just need to use one endpoint to retrieve the list of subunits of a unit:
+Après quelques recherches sur le site web de l'EPFL, j'ai découvert l'API search-ai.epfl.ch. Elle permet de rechercher des unités et des personnes. L'API n'est pas documentée publiquement, mais nous avons seulement besoin d'utiliser un point de terminaison pour récupérer la liste des sous-unités d'une unité :
 
 ```bash
-https://search-api.epfl.ch/api/unit?hl=en&showall=0&siteSearch=unit.epfl.ch&acro={UNIT_ACRONYM}
+https://search-api.epfl.ch/api/unit?hl=en&showall=0&siteSearch=unit.epfl.ch&acro={ACRONYME}
 ```
 
-For example, to retrieve the list of subunits of the ASSOCIATIONS unit, we can use the following URL:
+Par exemple, pour récupérer la liste des sous-unités de l'unité ASSOCIATIONS, nous pouvons utiliser l'URL suivante :
 
 ```bash
 curl "https://search-api.epfl.ch/api/unit?hl=en&showall=0&siteSearch=unit.epfl.ch&acro=ASSOCIATIONS"
 ```
 
-We obtain the following response:
+Nous obtenons la réponse suivante :
 
 ```json
 {
@@ -121,13 +121,13 @@ We obtain the following response:
 }
 ```
 
-We can see there are 12 "group" units for ASSOCIATIONS. Now querying the same endpoint with the acronym of one of the "group", for example `ANIMATIONS`:
+Nous pouvons voir qu'il y a 12 unités "groupe" pour ASSOCIATIONS. En interrogeant maintenant le même point de terminaison avec l'acronyme de l'un des "groupes", par exemple `ANIMATIONS` :
 
 ```bash
 curl "https://search-api.epfl.ch/api/unit?hl=en&showall=0&siteSearch=unit.epfl.ch&acro=ANIMATIONS"
 ```
 
-We obtain the following response:
+Nous obtenons la réponse suivante :
 
 ```json
 {
@@ -182,7 +182,7 @@ We obtain the following response:
 }
 ```
 
-We now have associations units as subunits. We can thus create a script that retrieves the list of subunits of the ASSOCIATIONS unit, and then the list of subunits of each subunit, and so on until we have the list of all associations. 
+Maintenant, nous avons des unités d'associations en tant que sous-unités. Nous pouvons ainsi créer un script qui récupère la liste des sous-unités de l'unité ASSOCIATIONS, puis la liste des sous-unités de chaque sous-unité, et ainsi de suite jusqu'à obtenir la liste de toutes les associations.
 
 ```python
 import requests
@@ -198,10 +198,10 @@ def list_units(write_groups_json=True, write_units_json=True):
     for i, group in enumerate(groups):
         res = requests.get(BASE_URL + group['acronym'])
 
-        # Find child units of the group
+        # Trouver les unités enfants du groupe
         child_units = json.loads(res.text)['subunits']
 
-        # Add id to groups
+        # Ajouter l'ID aux groupes
         groups[i] = {
             **group,
             'id': i
@@ -213,7 +213,7 @@ def list_units(write_groups_json=True, write_units_json=True):
                 **unit
             })
 
-    # Add id and type to units
+    # Ajouter l'ID et le type aux unités
     for i, unit in enumerate(units):
         units[i] = {
             **unit,
@@ -227,14 +227,14 @@ def list_units(write_groups_json=True, write_units_json=True):
 
 ---
 
-## Retrieve the list of people in a unit
+## Récupération de la liste des personnes dans une unité
 
-Now that we have the list of subunits, we have to retrieve the list of people in each subunit. Let's test the same endpoint as before with the `SYSMIC` accronym:
+Maintenant que nous avons la liste des sous-unités, nous devons récupérer la liste des personnes dans chaque sous-unité. Testons le même point de terminaison qu'auparavant avec l'acronyme `SYSMIC` :
 
 ```bash
 curl "https://search-api.epfl.ch/api/unit?hl=en&showall=0&siteSearch=unit.epfl.ch&acro=SYSMIC"
 ```
-We get the response:
+Nous obtenons la réponse :
 ```json
 {
     "code": 11346,
@@ -356,37 +356,39 @@ We get the response:
 }
 ```
 
-The `people` field contains the list of people in the subunit that is displayed on the [people.epfl.ch](https://people.epfl.ch) page of the unit.
+Le champ `people` contient la liste des personnes de la sous-unité qui est affichée sur la page [people.epfl.ch](https://people.epfl.ch) de l'unité.
 
-Unfortunately, for `SYSMIC` and other subunits it only contains certain members of the subunit. To retrieve the full list of members, we have to use the **internal EPFL LDAP** server.
+Malheureusement, pour `SYSMIC` et d'autres sous-unités, il ne contient que certains membres de la sous-unité. Pour récupérer la liste complète des membres, nous devons utiliser le **serveur LDAP interne de l'EPFL**.
 
-The EPFL LDAP server is an internal server that contains the list of all EPFL people. It is not publicly accessible, but we can use the **EPFL VPN** to access it. The LDAP server is not documented, but it follows the [LDAP protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) and we can use the [ldap3](https://ldap3.readthedocs.io/en/latest/) Python library to connect to and query from it.
+Le serveur LDAP de l'EPFL est un serveur interne qui contient la liste de toutes les personnes de l'EPFL. Il n'est pas accessible publiquement, mais nous pouvons utiliser le **VPN de l'EPFL** pour
 
-Here is a script that retrieves the list of accreditations in a subunit from the LDAP server, for all units:
+ y accéder. Le serveur LDAP n'est pas documenté, mais il suit le [protocole LDAP](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) et nous pouvons utiliser la bibliothèque Python [ldap3](https://ldap3.readthedocs.io/en/latest/) pour s'y connecter et effectuer des requêtes.
+
+Voici un script qui récupère la liste des accréditations dans une sous-unité à partir du serveur LDAP, pour toutes les unités :
 
 ```python
 from ldap3 import Server, Connection, SUBTREE
 
 def list_accreds(units):
     '''
-    List all accreditations of EPFL from the LDAP server of EPFL (ldap.epfl.ch).
+    Liste toutes les accréditations de l'EPFL depuis le serveur LDAP de l'EPFL (ldap.epfl.ch).
 
-    Input:
-        units (list): list of units
-        write_accreds_json (bool): write accreditations to accreds.json (optional)
+    Entrée :
+        units (list) : liste des unités
+        write_accreds_json (booléen) : écrit les accréditations dans accreds.json (facultatif)
 
-    Output:
-        accreds.json (file): list of accreditations (optional)
+    Sortie :
+        accreds.json (fichier) : liste des accréditations (facultatif)
 
-    Return:
-        accreds (list): list of accreditations
+    Retour :
+        accreds (list) : liste des accréditations
     '''
 
     server = Server('ldaps://ldap.epfl.ch:636', connect_timeout=5)
     c = Connection(server)
 
     if not c.bind():
-        print("Error: could not connect to ldap.epfl.ch", c.result)
+        print("Erreur : impossible de se connecter à ldap.epfl.ch", c.result)
         return
 
     accreds = []
@@ -411,9 +413,9 @@ def list_accreds(units):
 
 ---
 
-## Compute unit and user sizes
+### Calcul des tailles d'unités et d'utilisateurs
 
-Now that we have the list of accreditations, we can compute the size of each unit and each user. The size of a unit is the number of accreditations in the unit. The size of a user is the number of accreditations of the user.
+Maintenant que nous avons la liste des accréditations, nous pouvons calculer la taille de chaque unité et de chaque utilisateur. La taille d'une unité est le nombre d'accréditations dans l'unité. La taille d'un utilisateur est le nombre d'accréditations de l'utilisateur.
 
 ```python
 def compute_units_size(units, accreds):
@@ -464,9 +466,9 @@ def compute_users_size(accreds):
 
 ---
 
-## Compute links between units and users
+## Calcul des liens entre les unités et les utilisateurs
 
-Now that we have the list of accreditations, we can compute the links between units and users. A link between a unit and a user means that the user has an accreditation in the unit.
+Maintenant que nous avons la liste des accréditations, nous pouvons calculer les liens entre les unités et les utilisateurs. Un lien entre une unité et un utilisateur signifie que l'utilisateur possède une accréditation dans l'unité.
 
 ```python
 def compute_links(accreds, units, users):
@@ -487,11 +489,13 @@ def compute_links(accreds, units, users):
     return links
 ```
 
-## Visualize with D3.js
+## Visualisation avec D3.js
 
-Now that we have the list of units, users, and links, we can visualize it with D3.js. The visualization is based on the [D3.js Force-Directed Graph](https://observablehq.com/@d3/force-directed-graph) example.
+Maintenant que nous avons la liste des unités, des utilisateurs et des liens, nous pouvons la visualiser avec D3.js. La visualisation est basée sur l'exemple du [Graphique à Liaisons Fortes de D3.js](https://observablehq.com/@d3/force-directed-graph).
 
-First we have to write the data to a JSON file:
+Tout d'abord, nous devons
+
+ écrire les données dans un fichier JSON :
 
 ```python
 def write_json(units, users, links, groups):
@@ -509,7 +513,7 @@ def write_json(units, users, links, groups):
 
 ```
 
-Then we can use the following HTML template to visualize the data:
+Ensuite, nous pouvons utiliser le modèle HTML suivant pour visualiser les données :
 
 ```html
 <!-- index.html -->
@@ -553,16 +557,16 @@ Then we can use the following HTML template to visualize the data:
 </style>
 
 
-<!-- Our custom script -->
+<!-- Notre script personnalisé -->
 <script type="module" src="network.js"></script>
 
 </html>
 ```
 
-Now we can write the `network.js` script that will load the data and visualize it with D3.js.
-We have to differentiate between units and users, and we have to differentiate between links between units and links between users.
+Maintenant, nous pouvons écrire le script `network.js` qui chargera les données et les visualisera avec D3.js.
+Nous devons différencier entre les unités et les utilisateurs, et entre les liens entre les unités et les liens entre les utilisateurs.
 
-For the **user nodes** we'll set the color to **red**, and the radius to the number of accreditations of the user. For the **unit nodes** we'll set the color to the **color of the group** of the unit, and the radius to the number of accreditations in the unit.
+Pour les **nœuds utilisateur**, nous allons définir la couleur en **rouge**, et le rayon en fonction du nombre d'accréditations de l'utilisateur. Pour les **nœuds unité**, nous allons définir la couleur en fonction de la **couleur du groupe** de l'unité, et le rayon en fonction du nombre d'accréditations dans l'unité.
 
 ```javascript
 // network.js
@@ -578,41 +582,41 @@ fetch("./data/08-2023/groups.json")
       })
       .then(graph => {
 
-        // Dimensions of the SVG canvas
-        const width = window.innerWidth
-        const height = window.innerHeight
+        // Dimensions du canevas SVG
+        const largeur = window.innerWidth
+        const hauteur = window.innerHeight
 
-        // Select the SVG element and set its dimensions
+        // Sélectionner l'élément SVG et définir ses dimensions
         const svg = d3.select('svg')
-          .attr('width', width)
-          .attr('height', height)
+          .attr('width', largeur)
+          .attr('height', hauteur)
 
-        // Color scale for units
-        var color = d3.scaleOrdinal(d3.schemeCategory20);
+        // Échelle de couleur pour les unités
+        var couleur = d3.scaleOrdinal(d3.schemeCategory20);
 
-        // Node radius constants
-        const radius = 20
-        const radius_people = 25
+        // Constantes de rayon du nœud
+        const rayon = 20
+        const rayon_personnes = 25
 
-        // Create a force simulation
+        // Créer une simulation de force
         var simulation = d3.forceSimulation()
           .force("link", d3.forceLink().id(function (d) { return d.id; }))
           .force("charge", d3.forceManyBody())
-          .force("center", d3.forceCenter(width / 2, height / 2))
-          .force("collide", d3.forceCollide().radius(d => { return d.type === 'user' ? 50 * radius_people : 100 * radius }).iterations(3))
+          .force("center", d3.forceCenter(largeur / 2, hauteur / 2))
+          .force("collide", d3.forceCollide().radius(d => { return d.type === 'user' ? 50 * rayon_personnes : 100 * rayon }).iterations(3))
 
-        // Append an SVG group for elements
+        // Ajouter un groupe SVG pour les éléments
         var g = svg.append("g")
           .attr("class", "everything");
 
-        // Create nodes using data from graph.nodes
+        // Créer les nœuds en utilisant les données de graph.nodes
         var node = g.append("g")
           .attr("class", "nodes")
           .selectAll("g")
           .data(graph.nodes)
           .enter().append("g")
 
-        // Create links using data from graph.links
+        // Créer les liens en utilisant les données de graph.links
         var link = g.append("g")
           .attr("class", "links")
           .selectAll("line")
@@ -621,20 +625,20 @@ fetch("./data/08-2023/groups.json")
           .attr("stroke-width", function (d) { return Math.sqrt(d.value); })
           .style('stroke', 'white')
 
-        // Create circles for nodes
-        var circles = node.append("circle")
+        // Créer des cercles pour les nœuds
+        var cercles = node.append("circle")
           .attr("r", function (d) {
-            return d.type === 'user' ? d.accreds * radius_people : d.size * radius
+            return d.type === 'user' ? d.accreds * rayon_personnes : d.size * rayon
           })
           .attr("fill", function (d) {
             if (d.type == 'unit') {
-              return color(d.group_id);
+              return couleur(d.group_id);
             } else {
               return 'red'
             }
           })
 
-        // Create a drag handler and append it to the node object instead
+        // Créer un gestionnaire de traînée et l'ajouter à l'objet nœud
         var drag_handler = d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
@@ -642,23 +646,23 @@ fetch("./data/08-2023/groups.json")
 
         drag_handler(node);
 
-        // Add labels to nodes
-        var labels = node.append("text")
+        // Ajouter des étiquettes aux nœuds
+        var etiquettes = node.append("text")
           .attr("text-anchor", "middle")
           .attr("dy", ".35em")
           .text(function (d) {
             return d.type === 'user' ? d.name : d.label
           })
           .style("font-size", function (d) {
-            return d.type === 'user' ? d.accreds * radius_people : d.size * radius
+            return d.type === 'user' ? d.accreds * rayon_personnes : d.size * rayon
           })
           .style('fill', 'white')
 
-        // Add tooltips to nodes
+        // Ajouter des info-bulles aux nœuds
         node.append("title")
           .text(function (d) { return d.type === 'user' ? d.name : d.label });
 
-        // Initialize the simulation with nodes and links
+        // Initialiser la simulation avec les nœuds et les liens
         simulation
           .nodes(graph.nodes)
           .on("tick", ticked);
@@ -666,7 +670,7 @@ fetch("./data/08-2023/groups.json")
         simulation.force("link")
           .links(graph.links);
 
-        // Function to update link and node positions during simulation
+        // Fonction pour mettre à jour les positions des liens et des nœuds pendant la simulation
         function ticked() {
           link
             .attr("x1", function (d) { return d.source.x; })
@@ -675,69 +679,39 @@ fetch("./data/08-2023/groups.json")
             .attr("y2", function (d) { return d.target.y; });
 
           node
-            .attr("transform", function (d) {
+            .attr("transform",
+
+            function (d) {
               return "translate(" + d.x + "," + d.y + ")";
             })
-
         }
 
-        // Functions for drag interactions
+        // Fonction de gestion des événements pour le démarrage du glisser
         function dragstarted(d) {
           if (!d3.event.active) simulation.alphaTarget(0.3).restart();
           d.fx = d.x;
           d.fy = d.y;
         }
 
+        // Fonction de gestion des événements pour le glisser
         function dragged(d) {
           d.fx = d3.event.x;
           d.fy = d3.event.y;
         }
 
+        // Fonction de gestion des événements pour le glisser
         function dragended(d) {
           if (!d3.event.active) simulation.alphaTarget(0);
           d.fx = null;
           d.fy = null;
         }
-
-
-        // Add zoom capabilities 
-        var zoom_handler = d3.zoom()
-          .on("zoom", zoom_actions);
-
-        zoom_handler(svg);
-
-        function zoom_actions() {
-          g.attr("transform", d3.event.transform)
-        }
-
-        // Add legend for units (dot + name)
-        svg.selectAll("mydots")
-          .data(groups)
-          .enter()
-          .append("circle")
-          .attr("cx", 100)
-          .attr("cy", function (d, i) { return 100 + i * 25 }) // 100 is where the first dot appears. 25 is the distance between dots
-          .attr("r", 7)
-          .style("fill", function (d) { return color(d.id) })
-
-        svg.selectAll("mylabels")
-          .data(groups)
-          .enter()
-          .append("text")
-          .attr("x", 120)
-          .attr("y", function (d, i) { return 100 + i * 25 }) // 100 is where the first dot appears. 25 is the distance between dots
-          .style("fill", function (d) { return color(d.id) })
-          .text(function (d) { return d.name })
-          .attr("text-anchor", "left")
-          .style("alignment-baseline", "middle")
-
-      })
-  })
+      });
+  });
 ```
 
-The visualization is now complete! We can now open the `index.html` file in a browser and see the visualization (we have to run a local server to load the data with fetch).
+La visualisation est maintenant terminée ! Nous pouvons ouvrir le fichier `index.html` dans un navigateur pour voir la visualisation (nous devons exécuter un serveur local pour charger les données avec la commande fetch).
 
-For customizing the visualization, we can change the color scale, the radius of the nodes, the force simulation parameters, etc in the `network.js` file.
+Pour personnaliser la visualisation, nous pouvons modifier l'échelle de couleurs, le rayon des nœuds, les paramètres de simulation de force, etc dans le fichier `network.js`.
 
 ![Graphsociatif](/images/post/graphsociatif/graphsociatifBig.png)
 
@@ -745,9 +719,8 @@ For customizing the visualization, we can change the color scale, the radius of 
 
 ## Conclusion
 
-We have seen how to retrieve the list of associations and the list of accreditations from the EPFL LDAP server, and how to visualize it with D3.js. The visualization is available here:
-{{<link href="https://antoninfaure.github.io/graphsociatif" inner="Demo" class="btn btn-success" target="_blank" >}}
+Nous avons appris comment récupérer la liste des associations et la liste des accréditations à partir du serveur LDAP de l'EPFL, ainsi que comment les visualiser avec D3.js. La visualisation est disponible sur [https://antoninfaure.github.io/graphsociatif](https://antoninfaure.github.io/graphsociatif).
 
-The code is available on {{<link href="https://github.com/antoninfaure/graphsociatif" inner="GitHub" class="btn btn-default" target="_blank" >}}.
+Le code est disponible sur {{<link href="https://github.com/antoninfaure/graphsociatif" inner="GitHub" class="btn btn-default" target="_blank" >}}.
 
-For future projects it could be interesting to extend the graph to all units of EPFL, and to add more information about the accreditations (e.g. the role of the user in the unit).
+Pour les projets futurs, il pourrait être intéressant d'étendre le graph à toutes les unités de l'EPFL et d'ajouter davantage d'informations sur les accréditations (par exemple, le rôle de l'utilisateur dans l'unité).
