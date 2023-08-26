@@ -234,7 +234,9 @@ Now that we have the list of subunits, we have to retrieve the list of people in
 ```bash
 curl "https://search-api.epfl.ch/api/unit?hl=en&showall=0&siteSearch=unit.epfl.ch&acro=SYSMIC"
 ```
+
 We get the response:
+
 ```json
 {
     "code": 11346,
@@ -562,17 +564,17 @@ Then we can use the following HTML template to visualize the data:
 Now we can write the `network.js` script that will load the data and visualize it with D3.js.
 We have to differentiate between units and users, and we have to differentiate between links between units and links between users.
 
-For the **user nodes** we'll set the color to **red**, and the radius to the number of accreditations of the user. For the **unit nodes** we'll set the color to the **color of the group** of the unit, and the radius to the number of accreditations in the unit.
+For the **user nodes** we'll set the color to **red**, and the radius to the number of accreditations of the user. For the **unit nodes** we'll set the color to the **color of the group** of the unit, and the radius to the number of accreditations in the unit. We'll also create a **legend** to show each group with its name and color.
 
 ```javascript
 // network.js
 
-fetch("./data/08-2023/groups.json")
+fetch("groups.json")
   .then(response => {
     return response.json();
   })
   .then(groups => {
-    fetch("./data/08-2023/data.json")
+    fetch("data.json")
       .then(response => {
         return response.json();
       })

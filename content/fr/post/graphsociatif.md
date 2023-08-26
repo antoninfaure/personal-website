@@ -566,17 +566,17 @@ Ensuite, nous pouvons utiliser le modèle HTML suivant pour visualiser les donn�
 Maintenant, nous pouvons écrire le script `network.js` qui chargera les données et les visualisera avec D3.js.
 Nous devons différencier entre les unités et les utilisateurs, et entre les liens entre les unités et les liens entre les utilisateurs.
 
-Pour les **nœuds utilisateur**, nous allons définir la couleur en **rouge**, et le rayon en fonction du nombre d'accréditations de l'utilisateur. Pour les **nœuds unité**, nous allons définir la couleur en fonction de la **couleur du groupe** de l'unité, et le rayon en fonction du nombre d'accréditations dans l'unité.
+Pour les **nœuds utilisateur**, nous allons définir la couleur en **rouge**, et le rayon en fonction du nombre d'accréditations de l'utilisateur. Pour les **nœuds unité**, nous allons définir la couleur en fonction de la **couleur du groupe** de l'unité, et le rayon en fonction du nombre d'accréditations dans l'unité. On ajoute aussi une **légende** avec le nom et la couleur de chaque groupe.
 
 ```javascript
 // network.js
 
-fetch("./data/08-2023/groups.json")
+fetch("groups.json")
   .then(response => {
     return response.json();
   })
   .then(groups => {
-    fetch("./data/08-2023/data.json")
+    fetch("data.json")
       .then(response => {
         return response.json();
       })
