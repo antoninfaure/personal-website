@@ -23,6 +23,8 @@ Nous souhaitons que notre flux de travail puisse :
 3. [Exécuter un script Python](#exécution-dun-script-python)
 4. [Commit et push les modifications sur le repository](#commit-et-push-les-modifications-sur-le-repository)
 
+---
+
 ## Déclenchement du workflow selon un horaire
 
 Pour déclencher le workflow selon un horaire, nous pouvons utiliser l'événement `schedule` ([voir la documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events)). L'horaire est défini à l'aide d'une syntaxe cron ([voir la documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule)).
@@ -33,6 +35,8 @@ on:
     - cron: "0 21 * * *" # s'exécute tous les jours à 21 h 00 UTC
 ```
 
+---
+
 ## Récupération de la dernière version du repository
 
 Pour récupérer la dernière version du repository, nous pouvons utiliser l'action `actions/checkout` ([voir la documentation](https://github.com/actions/checkout)). Cette action va extraire le contenu du repository vers l'exécuteur GitHub.
@@ -42,6 +46,8 @@ steps:
   - name: checkout repo content
     uses: actions/checkout@v3 # extraire le contenu du repository vers l'exécuteur GitHub
 ```
+
+---
 
 ## Exécution d'un script Python
 
@@ -76,6 +82,8 @@ steps:
     run: python run.py
 ```
 
+---
+
 ## Commit et push les modifications sur le repository
 
 Pour valider et envoyer les modifications sur le repository, nous pouvons utiliser l'action `ad-m/github-push-action` ([voir la documentation](https://github.com/ad-m/github-push-action)). Cette action va valider et envoyer les modifications sur le repository. Nous devons configurer l'action pour utiliser la variable secrète `GITHUB_TOKEN` ([voir la documentation](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)) afin de permettre l'envoi des modifications sur le repository.
@@ -96,6 +104,8 @@ steps:
         github_token: ${{ secrets.GITHUB_TOKEN }} # GITHUB_TOKEN est une variable secrète générée automatiquement par GitHub Actions
         branch: main # envoyer vers la branche main
 ```
+
+---
 
 ## Résumé
 
