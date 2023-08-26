@@ -2,14 +2,16 @@ baseurl = 'https://antoninfaure.ch'
 DefaultContentLanguage = "en"
 theme = 'beautifulhugo'
 googleAnalytics='G-DNX97H63H6'
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 
 [Params]
   homeTitle = "Antonin Faure"
   mainSections = ["post", "work"]
-  useHLJS = true
   socialShare = true
   hideAuthor = true
   custom_css = ["custom.css"]
+  
 
 [languages]
   [languages.en]
