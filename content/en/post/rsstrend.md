@@ -29,6 +29,7 @@ Inspired by and curious about Google News articles grouping by event I challenge
 - [Creating a Text Network](#creating-a-text-network)
 - [Visualizing the Text Network with D3.js](#visualizing-the-text-network-with-d3js)
 - [Grouping news with associations rules](#grouping-news-with-associations-rules)
+- [Automating with GitHub Actions](#automating-with-github-actions)
 
 ---
 
@@ -596,6 +597,12 @@ After testing this method on several days I noticed that the relevance of the me
 One solution to this could be to explore more merging solutions with **associations rules** or to perform clustering (with **Spectral Clustering** Algorithm for e.g.).
 
 There’s definitely more work to make this solution more accurate and self-learning.
+
+---
+
+## Automating with GitHub Actions
+
+In order to scrap the data and update our graph on a daily basis without our intervention we can use [GitHub Actions](https://github.com/features/actions). I made a [dedicated post](/post/actions-scraping) to explain the process.
 
 ---
 

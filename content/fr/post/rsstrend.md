@@ -24,6 +24,7 @@ Inspiré et curieux de la façon dont Google News regroupe les articles par év�
 - [Création d'un Text Network](#création-dun-text-network)
 - [Visualisation du Text Network avec D3.js](#visualisation-du-text-network-avec-d3js)
 - [Regroupement des actualités avec les règles d'association](#regroupement-des-actualités-avec-les-règles-dassociation)
+- [Automatiser avec GitHub Actions](#automatiser-avec-github-actions)
 
 ---
 
@@ -592,6 +593,12 @@ Après avoir testé cette méthode sur plusieurs jours, j'ai pu remarqué que la
 Une solution pourrait être d'explorer davantage de solutions de merging avec des **règles d'association** ou de réaliser un clustering (par exemple avec l'algorithme de **Spectral Clustering**).
 
 Il y a certainement plus de travail à faire pour rendre cette solution plus précise et self-learning.
+
+---
+
+## Automatiser avec GitHub Actions
+
+Pour collecter les données et mettre à jour notre graphique quotidiennement sans notre intervention, nous pouvons utiliser [GitHub Actions](https://github.com/features/actions). J'ai rédigé un [article dédié](/post/actions-scraping) pour expliquer le processus.
 
 ---
 
