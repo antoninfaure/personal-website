@@ -22,7 +22,7 @@ Master Student in Data Science at EPFL
 Cycling \
 Associations \
 Web development \
-Beerology \
+Beer tasting \
 Stagecraft \
 Cinematography
 
