@@ -448,7 +448,7 @@ fetch(`./data/${date}/edges.json`)
   })
 ```
 
-Alternatively, the software [Gephi](https://gephi.org/) can be used for handling **large datasets**, which would be otherwise impractical D3.js Force Graph.
+Alternatively, the software [Gephi](https://gephi.org/) can be used for handling **large datasets**, which would be otherwise impractical with D3.js Force Graph.
 
 ---
 

@@ -16,7 +16,7 @@ summary: Running a scraping script on a schedule with GitHub Actions
 
 I recently had to run a scraping script on a schedule in order to retrieve news articles from daily RSS Feeds ([see more](/post/rsstrend)). I decided to use [GitHub Actions](https://github.com/features/actions) to do so. This post is a quick tutorial on how to do it. 
 
-We want your workflow to:
+We want our workflow to:
 
 1. [Run every day](#triggering-the-workflow-on-a-schedule)
 2. [Pull the latest version of the repository](#pulling-the-latest-version-of-the-repository)
@@ -87,7 +87,10 @@ steps:
 ## Commit and push the changes to the repository
 
 In order to commit and push the changes to the repository we can use the `ad-m/github-push-action` action ([see documentation](https://github.com/ad-m/github-push-action)). This action will commit and push the changes to the repository. We need to configure the action to use the `GITHUB_TOKEN` secret variable ([see documentation](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)) in order to allow to push the changes to the repository.
-The workflow automatically generates its own token, which is stored in the `GITHUB_TOKEN` secret variable. This token is used to push the changes to the repository. We'll push the changes directly to the `main` branch.
+To do so we need to set the autorization of the `GITHUB_TOKEN` secret variable to read and write in the repository settings:
+![github-token-settings](/images/post/actions-scraping/settings.png)
+
+The workflow then automatically generates its own token, which is stored in the `GITHUB_TOKEN` secret variable. This token is used to push the changes to the repository. We'll push the changes directly to the `main` branch.
 
 ```yaml
 steps:
