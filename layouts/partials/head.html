@@ -66,6 +66,8 @@
 
   <link rel="stylesheet" href="{{ "css/main.css" | absURL }}" />
   <link rel="stylesheet" href="{{ "css/bootstrap-grid.css" | absURL }}" />
+  
+  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}" />
 
   {{- if .Site.Params.staticman -}}
   <link rel="stylesheet" href="{{ "css/staticman.css" | absURL }}" />
@@ -77,7 +79,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
   {{- end -}}
-
+  
   {{- if .Site.Params.useHLJS }}
   <link rel="stylesheet" href="{{ "css/highlight.min.css" | absURL }}" />
   {{- else -}}
@@ -97,7 +99,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
   {{- end -}}
 
-  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}" />
 
 {{- partial "head_custom.html" . }}
 {{- if not .Site.IsServer -}}
