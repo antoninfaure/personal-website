@@ -4,6 +4,7 @@ date: 2023-04-24
 bigimg: [{src: "/images/work/resteajour/resteajour.webp", desc: "Page d'accueil"}]
 image: "/images/work/resteajour/resteajour.webp"
 summary: Plateforme d'éducation numérique
+draft: true
 ---
 
 Site d'aide destiné aux étudiant·e·s de l'EPFL. Gestion de contenu (cours, chapitres, notions, exercices). Génération de série d'exercices. Suivi de progression. <!--more--> {{<link href="https://resteajour.ch" class="badge" inner="amacepfl.ch" target="_blank" >}}
