@@ -162,3 +162,20 @@ name = "180°C"
 role = "Member of Creation Pole"
 year = "2022-2023"
 description = "Member of the Creation Pole of 180°C, the student cooking association of EPFL-UNIL. Created the website [180c.ch](https://180c.ch). Helped in the creation of \"Le Crieur\", a guide that aggregates top student-recommended venues including restaurants, cafés, bars, and more, serving as a go-to resource for the student community."
+
+
+[[associations]]
+[[associations.fr]]
+link = "https://180c.ch"
+img = "/images/assos/logo180.png"
+name = "180°C"
+role = "Responsable Création"
+year = "2023-2024"
+description = "Responsable du pôle création de 180°C, l'association de cuisine étudiante de l'EPFL-UNIL. Le pôle création est chargé de la création de contenu pour l'association, que ce soit le livre de recettes 'Fringale', le guide étudiant 'Le Crieur' ou le site web de l'association [180c.ch](https://180c.ch)."
+[[associations.en]]
+link = "https://180c.ch"
+img = "/images/assos/logo180.png"
+name = "180°C"
+role = "Head of Creation Pole"
+year = "2023-2024"
+description = "Head of the Creation Pole of 180°C, the student cooking association of EPFL-UNIL. The Creation Pole is responsible for the creation of content for the association, whether it is the recipe book 'Fringale', the student guide 'Le Crieur' or the association's website [180c.ch](https://180c.ch)."
