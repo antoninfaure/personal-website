@@ -4,6 +4,7 @@ date: 2023-04-24
 bigimg: [{src: "/images/work/resteajour/resteajour.webp", desc: "Page d'accueil"}]
 image: "/images/work/resteajour/resteajour.webp"
 summary: Plateforme d'éducation numérique
+preview: "/images/work/resteajour/resteajour.webp"
 draft: true
 ---
 

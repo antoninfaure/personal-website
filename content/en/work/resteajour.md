@@ -4,6 +4,7 @@ date: 2023-04-24
 bigimg: [{src: "/images/work/resteajour/resteajour.webp", desc: "Homepage"}]
 image: "/images/work/resteajour/resteajour.webp"
 summary: E-learning plateform
+preview: "/images/work/resteajour/resteajour.webp"
 ---
 
 E-learning platform for EPFL students. Content management (courses, chapters, concepts, exercises). Exercise set generation. Progress tracking. {{<link href="https://resteajour.ch" class="badge" inner="amacepfl.ch" target="_blank" >}}

@@ -7,6 +7,7 @@ summary: Analyzing EPFL Restaurant Menus from Data Scraping to Network Visualiza
 bigimg:
   - src: /images/post/epfl-miam/network.png
 image: /images/post/epfl-miam/network.png
+preview: /images/post/epfl-miam/network.png
 ---
 
 {{<link href="https://github.com/antoninfaure/epfl-miam" class="btn btn-default my-3" target="_blank" inner="GitHub">}}
