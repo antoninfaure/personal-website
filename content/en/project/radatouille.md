@@ -4,9 +4,9 @@ draft: false
 subtitle: "Applied Data Analysis (CS-401) @EPFL"
 date: 2023-12-29
 bigimg:
-  - src: /images/post/radatouille/banner.webp
-image: /images/post/radatouille/banner.webp
-preview: /images/post/radatouille/preview.webp
+  - src: /images/project/radatouille/banner.webp
+image: /images/project/radatouille/banner.webp
+preview: /images/project/radatouille/preview.webp
 tags:
   - dataviz
   - data analysis
