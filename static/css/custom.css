@@ -3,12 +3,12 @@ a {
 }
 
 body.dark {
-    background-color: #080808;
+    background-color: #212121;
     color: white;
 }
 
 footer {
-    background-color: #080808;
+    background-color: #212121;
     color: white;
 }
 
@@ -29,11 +29,11 @@ body:not(.dark) footer a i:not(.fa-circle) {
 
 body.dark footer {
     background-color: white;
-    color: #080808;
+    color: #212121;
 }
 
 body.dark footer a:not(:hover) {
-    color: #080808;
+    color: #212121;
 }
 
 body:not(.dark) footer a:hover {
@@ -67,18 +67,18 @@ body.dark .post-meta {
 
 .post-meta .badge {
     color: white;
-    background-color: #080808;
+    background-color: #212121;
 
 }
 
 body.dark .post-meta .badge {
     background-color: white;
-    color: #080808;
+    color: #212121;
 }
 
 .intro-header.big-img {
     position: relative;
-    background-color: #080808;
+    background-color: #212121;
 }
 .intro-header.big-img .img {
     position: absolute;
@@ -106,7 +106,7 @@ iframe {
 /* Avatar */
 
 .orbit-icon {
-    fill: #080808;
+    fill: #212121;
 }
 
 body.dark .orbit-icon {
@@ -147,7 +147,7 @@ div>.asso {
 }
 
 .asso {
-    background: #080808;
+    background: #212121;
     color: white;
     border-radius: 3em;
     overflow: hidden;
@@ -158,7 +158,7 @@ div>.asso {
 
 body.dark .asso {
     background: white;
-    color: #080808;
+    color: #212121;
 }
 
 .asso .card-body {
@@ -192,7 +192,7 @@ body.dark .asso {
 /* Navbar */
 
 .navbar {
-    background-color: #080808;
+    background-color: #212121;
     color: white;
 }
 
@@ -202,11 +202,11 @@ body.dark .asso {
 
 body.dark .navbar {
     background-color: white;
-    color: #080808;
+    color: #212121;
 }
 
 body.dark .navbar .navbar-nav li a {
-    color: #080808;
+    color: #212121;
 }
 
 .navbar-right {
@@ -214,6 +214,10 @@ body.dark .navbar .navbar-nav li a {
     align-items: center;
     padding: 0 30px;
     justify-content: center;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form, .navbar-custom {
+    border-color: #212121;
 }
 
 /* Dark Mode Switch */

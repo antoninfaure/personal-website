@@ -17,7 +17,7 @@
 }
 
 html, body {
-    background-color: #080808;
+    background-color: #212121;
     color: white;
     min-height: 100%;
     height: 100%;
@@ -44,7 +44,7 @@ li {
 .text-banner {
     background-color: white;
     /*background: #ce0a3b;*/
-    color: #080808;
+    color: #212121;
     overflow: hidden;
 }
 .text-banner span {
@@ -63,7 +63,7 @@ li {
 
 footer {
     background: white;
-    color: #080808;
+    color: #212121;
 }
 footer h5 {
     font-weight: 900;
@@ -87,7 +87,7 @@ h6 {
 }
 .asso {
     background: white;
-    color: #080808;
+    color: #212121;
     border-radius: 3em;
     overflow: hidden;
     border: none;
