@@ -220,6 +220,27 @@ body.dark .navbar .navbar-nav li a {
     border-color: #212121;
 }
 
+/* Buttons */
+.btn-dark {
+    background-color: #212121;
+    color: white;
+}
+
+.btn-dark:hover {
+    background-color: #080808;
+    color: #c0c0c0
+}
+
+.btn-red {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-red:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
 /* Dark Mode Switch */
 
 .js-toggle-wrapper {
