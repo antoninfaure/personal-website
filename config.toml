@@ -7,7 +7,7 @@ pygmentsUseClasses = true
 
 [Params]
   homeTitle = "Antonin Faure"
-  mainSections = ["post", "work", "project"]
+  mainSections = ["post", "project"]
   socialShare = true
   hideAuthor = true
   custom_css = ["custom.css"]
@@ -35,10 +35,6 @@ pygmentsUseClasses = true
         url = "project"
         weight = 4
         name = "Projects"
-      [[languages.en.menu.main]]
-        url = "work"
-        weight = 5
-        name = "Work"
 
   [languages.fr]
     contentDir = "content/fr"
@@ -59,10 +55,6 @@ pygmentsUseClasses = true
         url = "project"
         weight = 4
         name = "Projets"
-      [[languages.fr.menu.main]]
-        url = "work"
-        weight = 5
-        name = "Réalisations"
     
 [Author]
   name = "Antonin Faure"

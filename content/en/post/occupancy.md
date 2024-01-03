@@ -5,7 +5,7 @@ subtitle: "Enhancing Room Occupancy Information @EPFL"
 date: 2023-12-27
 bigimg:
   - src: /images/post/occupancy/room.png
-preview: /images/post/occupancy/room.png
+preview: /images/post/occupancy/preview.png
 tags:
   - python
   - scraping

@@ -5,8 +5,7 @@ subtitle: Automating scraping with GitHub Actions
 date: 2023-08-26
 bigimg:
   - src: /images/post/actions-scraping/github-actions.webp
-image: /images/post/actions-scraping/github-actions.webp
-preview: /images/post/actions-scraping/github-actions.webp
+preview: /images/post/actions-scraping/preview.webp
 tags:
   - python
   - scraping
@@ -18,10 +17,11 @@ I recently had to run a scraping script on a schedule in order to retrieve news 
 
 We want our workflow to:
 
-1. [Run every day](#triggering-the-workflow-on-a-schedule)
-2. [Pull the latest version of the repository](#pulling-the-latest-version-of-the-repository)
-3. [Run a python script](#running-a-python-script)
-4. [Commit and push the changes to the repository](#commit-and-push-the-changes-to-the-repository)
+- [Triggering the workflow on a schedule](#triggering-the-workflow-on-a-schedule)
+- [Pulling the latest version of the repository](#pulling-the-latest-version-of-the-repository)
+- [Running a python script](#running-a-python-script)
+- [Commit and push the changes to the repository](#commit-and-push-the-changes-to-the-repository)
+- [Summary](#summary)
 
 ---
 

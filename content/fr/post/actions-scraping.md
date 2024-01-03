@@ -5,8 +5,7 @@ subtitle: Automatisation du scraping avec GitHub Actions
 date: 2023-08-26
 bigimg:
   - src: /images/post/actions-scraping/github-actions.webp
-image: /images/post/actions-scraping/github-actions.webp
-preview: /images/post/actions-scraping/github-actions.webp
+preview: /images/post/actions-scraping/preview.webp
 tags:
   - python
   - scraping
@@ -18,10 +17,11 @@ J'ai récemment dû exécuter un script de scraping quotidiennement afin de réc
 
 Nous souhaitons que notre flux de travail puisse :
 
-1. [S'exécuter tous les jours à une heure précise](#déclenchement-du-workflow-selon-un-horaire)
-2. [Récupérer la dernière version du repository](#récupération-de-la-dernière-version-du-repository)
-3. [Exécuter un script Python](#exécution-dun-script-python)
-4. [Commit et push les modifications sur le repository](#commit-et-push-les-modifications-sur-le-repository)
+- [Déclenchement du workflow selon un horaire](#déclenchement-du-workflow-selon-un-horaire)
+- [Récupération de la dernière version du repository](#récupération-de-la-dernière-version-du-repository)
+- [Exécution d'un script Python](#exécution-dun-script-python)
+- [Commit et push les modifications sur le repository](#commit-et-push-les-modifications-sur-le-repository)
+- [Résumé](#résumé)
 
 ---
 

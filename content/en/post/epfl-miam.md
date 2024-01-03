@@ -6,8 +6,7 @@ tags: ["dataviz", "python", "d3js", "scraping"]
 summary: Analyzing EPFL Restaurant Menus from Data Scraping to Network Visualization using Python and D3.js, while performing Exploratory Data Analysis (EDA) and Automation with GitHub Actions.
 bigimg:
   - src: /images/post/epfl-miam/network.png
-image: /images/post/epfl-miam/network.png
-preview: /images/post/epfl-miam/network.png
+preview: /images/post/epfl-miam/preview.png
 ---
 
 {{<link href="https://github.com/antoninfaure/epfl-miam" class="btn btn-default my-3" target="_blank" inner="GitHub">}}

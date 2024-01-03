@@ -9,7 +9,7 @@ image: /images/project/radatouille/banner.webp
 preview: /images/project/radatouille/preview.webp
 tags:
   - dataviz
-  - data analysis
+  - data-analysis
   - python
   - scraping
 summary: "Data analysis of the user-critic divide in cinema comparing the ratings of movies on IMDb and Metacritic."
