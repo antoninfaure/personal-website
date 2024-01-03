@@ -276,7 +276,8 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Vegetarian Proportions](/images/post/epfl-miam/vegetarian-trendline.png)
+{{<image src="/images/post/epfl-miam/vegetarian-trendline.png" alt="Vegetarian Proportions" position="center">}}
+
 
 #### Key Insights from Vegetarian Proportions
 
@@ -319,7 +320,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Price Distributions](/images/post/epfl-miam/etudiant-distribution.png)
+{{<image src="/images/post/epfl-miam/etudiant-distribution.png" alt="Price Distributions" position="center">}}
 
 #### Key Insights from Price Distributions
 

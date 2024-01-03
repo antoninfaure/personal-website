@@ -24,13 +24,13 @@ In the Spring Semester of 2023 we embarked, with [Romain Birling](https://github
 
 Initially, we analyzed an unmitigated epidemic model, observing rapid decreases in susceptible populations and corresponding increases in recoveries and deaths. This highlighted the dire consequences of uncontrolled spread, with significant fatalities occurring in a short period.
 
-![Unmitigated Epidemic](/images/project/dql-epidemic/unmitigated.png)
+{{<image src="/images/project/dql-epidemic/unmitigated.png" alt="Unmitigated Epidemic" position="center">}}
 
 ## Professor Russo’s Policy
 
 We then implemented Professor Russo's policy, which involved periodic confinements triggered by infection thresholds. This policy showed a stabilizing effect on susceptible populations and reduced fatalities, although it did not completely halt the epidemic within 30 weeks.
 
-![Rosso Policy](/images/project/dql-epidemic/russo.png)
+{{<image src="/images/project/dql-epidemic/russo.png" alt="Professor Russo's Policy" position="center">}}
 
 ## Deep Q-Learning Approaches
 

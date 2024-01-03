@@ -77,10 +77,6 @@ Several enhancements are possible for Jarvis, such as refining the AI responses,
 
 As the project is open-source and hosted on GitHub, contributions via pull requests are welcomed. This is an opportunity for developers to contribute to an innovative project and help enhance its capabilities.
 
-## Licensing
-
-Jarvis is licensed under the MIT License, allowing for wide distribution and modification.
-
 ### Concluding Thoughts
 
 The Jarvis Chrome Extension represents a step forward in integrating AI with everyday web browsing, providing users with a unique and enhanced experience. It's a testament to the power of open-source collaboration and the endless possibilities of AI in web development. Visit the GitHub repository to explore more:

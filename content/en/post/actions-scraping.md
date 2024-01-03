@@ -88,7 +88,8 @@ steps:
 
 In order to commit and push the changes to the repository we can use the `ad-m/github-push-action` action ([see documentation](https://github.com/ad-m/github-push-action)). This action will commit and push the changes to the repository. We need to configure the action to use the `GITHUB_TOKEN` secret variable ([see documentation](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)) in order to allow to push the changes to the repository.
 To do so we need to set the autorization of the `GITHUB_TOKEN` secret variable to read and write in the repository settings:
-![github-token-settings](/images/post/actions-scraping/settings.png)
+
+{{<image src="/images/post/actions-scraping/settings.png" alt="github-token-settings" position="center">}}
 
 The workflow then automatically generates its own token, which is stored in the `GITHUB_TOKEN` secret variable. This token is used to push the changes to the repository. We'll push the changes directly to the `main` branch.
 

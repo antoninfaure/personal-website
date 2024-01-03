@@ -17,20 +17,21 @@
   {{ if $bigimg }}
     <div id="header-big-imgs" data-num-img={{len $bigimg}}
       {{range $i, $img := $bigimg}}
-         {{ if (fileExists $img.src)}}
-          data-img-src-{{add $i 1}}="{{$img.src | absURL }}"
-         {{else}}
-          data-img-src-{{add $i 1}}="{{$img.src}}"
-         {{end}}
+        {{ $assetImg := resources.Get $img.src }}
+        {{ if $assetImg }}
+          data-img-src-{{add $i 1}}="{{$assetImg.RelPermalink}}"
+        {{ end }}
          {{ if $img.desc}}data-img-desc-{{add $i 1}}="{{$img.desc}}"{{end}}
       {{end}}></div>
   {{ end }}
 
   <header class="header-section {{ if $bigimg }}has-img{{ end }}">
     {{ if $bigimg }}
+      
       {{ $firstimg := index $bigimg 0 }}
       <div class="intro-header big-img">
-        <div class="img" style="background-image: url('{{$firstimg.src}}');"></div>
+
+        <div class="img" {{ partial "bg-image" (dict "Src" $firstimg.RelPermalink "Alt" $title "Webp" true ) | safeHTMLAttr }}></div>
         {{ $subtitle := $.Scratch.Get "subtitle" }}
         <div class="container">
           <div class="row">

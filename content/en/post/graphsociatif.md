@@ -741,7 +741,7 @@ The visualization is now complete! We can now open the `index.html` file in a br
 
 For customizing the visualization, we can change the color scale, the radius of the nodes, the force simulation parameters, etc in the `network.js` file.
 
-![Graphsociatif](/images/post/graphsociatif/graphsociatifBig.png)
+{{<image src="/images/post/graphsociatif/graphsociatifBig.png" alt="Graphsociatif" position="center">}}
 
 ---
 

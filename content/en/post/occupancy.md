@@ -44,7 +44,8 @@ In the following sections, I’ll delve into the steps I took to turn this idea 
 
 The idea for occupancy.flep.ch was born out of observations and conversations. The core concept was simple: create a platform that provides real-time information on available rooms across the entire EPFL campus, presented in a clear and accessible manner. This tool would not only save time but also reduce the stress associated with finding study spaces, especially during peak hours and exam periods.
 
-![occupancy.flep.ch](/images/post/occupancy/homepage.png)
+{{<image src="/images/post/occupancy/room.png" alt="Room" position="center" style="border-radius: 8px;" caption="A typical room at EPFL.">}}
+
 
 ### Technology Stack
 
