@@ -3,7 +3,7 @@
 ||
 ### Qui suis-je ?
 Antonin Faure \
-22 ans \
+23 ans \
 Originaire de Nantes, France \
 Habite à Lausanne, Suisse \
 Étudiant à l'EPFL
