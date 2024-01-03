@@ -13,7 +13,7 @@ tags:
 summary: "An exploration of deep Q-learning techniques for effective epidemic mitigation strategies, conducted as part of an EPFL course project."
 ---
 
-{{<link href="https://github.com/antoninfaure/DQLearning-epidemic" class="btn btn-dark my-3" target="_blank" inner="GitHub">}}
+{{<link href="https://github.com/antoninfaure/DQLearning-epidemic" class="btn btn-cyan my-3" target="_blank" inner="GitHub">}}
 {{<link href="/docs/project/dql-epidemic/report.pdf" class="btn btn-red my-3" target="_blank" inner="Report">}}
 
 ## Introduction

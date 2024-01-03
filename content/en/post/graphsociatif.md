@@ -16,7 +16,7 @@ tags:
 summary: Scraping the EPFL LDAP to visualize the associative network of EPFL using D3.js
 ---
 
-{{<link href="https://github.com/antoninfaure/graphsociatif" class="btn btn-default my-3" target="_blank" inner="GitHub">}}
+{{<link href="https://github.com/antoninfaure/graphsociatif" class="btn btn-cyan my-3" target="_blank" inner="GitHub">}}
 {{<link href="https://antoninfaure.github.io/graphsociatif" class="btn btn-success my-3" inner="Live Demo" >}}
 {{<iframe src="https://antoninfaure.github.io/graphsociatif" class="w-100" >}}
 

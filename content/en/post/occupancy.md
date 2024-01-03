@@ -14,8 +14,8 @@ tags:
 summary: "A web application to enhance the room occupancy information at EPFL."
 ---
 
-{{<link href="https://github.com/antoninfaure/occupancy-epfl" class="btn btn-dark my-3" target="_blank" inner="GitHub Backend">}}
-{{<link href="https://github.com/antoninfaure/occupancy-front" class="btn btn-dark my-3" target="_blank" inner="GitHub Frontend">}}
+{{<link href="https://github.com/antoninfaure/occupancy-epfl" class="btn btn-cyan my-3" target="_blank" inner="GitHub Backend">}}
+{{<link href="https://github.com/antoninfaure/occupancy-front" class="btn btn-cyan my-3" target="_blank" inner="GitHub Frontend">}}
 {{<link href="https://occupancy.flep.ch" class="btn btn-red my-3" target="_blank" inner="occupancy.flep.ch">}}
 
 ## Introduction

@@ -13,7 +13,7 @@ tags:
 summary: "An exploration of machine learning techniques for identifying Higgs boson generation events in CERN particle accelerator data."
 ---
 
-{{<link href="https://github.com/antoninfaure/ML-higgs" class="btn btn-dark my-3" target="_blank" inner="GitHub Repository">}}
+{{<link href="https://github.com/antoninfaure/ML-higgs" class="btn btn-cyan my-3" target="_blank" inner="GitHub Repository">}}
 {{<link href="/docs/project/ml-higgs/Report_Project1.pdf" class="btn btn-red my-3" target="_blank" inner="Report">}}
 
 ## Introduction

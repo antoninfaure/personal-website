@@ -9,7 +9,7 @@ bigimg:
 preview: /images/post/epfl-miam/preview.png
 ---
 
-{{<link href="https://github.com/antoninfaure/epfl-miam" class="btn btn-default my-3" target="_blank" inner="GitHub">}}
+{{<link href="https://github.com/antoninfaure/epfl-miam" class="btn btn-cyan my-3" target="_blank" inner="GitHub">}}
 {{<link href="https://antoninfaure.github.io/epfl-miam/" target="_blank" class="btn btn-success my-3" inner="Live Demo">}}
 
 

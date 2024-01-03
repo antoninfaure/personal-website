@@ -14,7 +14,7 @@ tags:
 summary: "A Chrome extension that utilizes a Language Learning Model (LLM) to provide contextual insights during web browsing."
 ---
 
-{{<link href="https://github.com/antoninfaure/jarvis-chrome-extension" class="btn btn-dark my-3" target="_blank" inner="GitHub">}}
+{{<link href="https://github.com/antoninfaure/jarvis-chrome-extension" class="btn btn-cyan my-3" target="_blank" inner="GitHub">}}
 
 
 ## Introduction
@@ -71,7 +71,7 @@ To use Jarvis, users need to:
 
 ### Potential Improvements
 
-Several enhancements are possible for Jarvis, such as refining the AI responses, improving the user interface, and expanding the range of supported webpages.
+Several enhancements are possible for Jarvis, such as refining the AI responses, improving the user interface, and expanding the range of supported webpages. What can also be explored is the text-to-speech functionality, which would allow users to listen to the responses instead of reading them.
 
 ### Open to Contributions
 
@@ -79,6 +79,7 @@ As the project is open-source and hosted on GitHub, contributions via pull reque
 
 ### Concluding Thoughts
 
-The Jarvis Chrome Extension represents a step forward in integrating AI with everyday web browsing, providing users with a unique and enhanced experience. It's a testament to the power of open-source collaboration and the endless possibilities of AI in web development. Visit the GitHub repository to explore more:
+The Jarvis Chrome Extension represents a step forward in integrating AI with everyday web browsing, providing users with a unique and enhanced experience. It's a testament to the power of open-source collaboration and the endless possibilities of AI in web development. 
+Visit the GitHub repository to explore more:
 
 - [GitHub Repository](https://github.com/antoninfaure/jarvis-chrome-extension)

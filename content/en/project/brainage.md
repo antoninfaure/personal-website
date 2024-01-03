@@ -13,7 +13,7 @@ tags:
 summary: "Exploring the impact of cluster subgrouping models on biological age prediction using brain anatomical volume measurements."
 ---
 
-{{<link href="https://github.com/CS-433/project2_brainAge" class="btn btn-dark my-3" target="_blank" inner="GitHub Repository">}}
+{{<link href="https://github.com/CS-433/project2_brainAge" class="btn btn-cyan my-3" target="_blank" inner="GitHub Repository">}}
 {{<link href="/docs/project/brainage/Report_Project2_BrainAge.pdf" class="btn btn-red my-3" target="_blank" inner="Report">}}
 
 ## Introduction

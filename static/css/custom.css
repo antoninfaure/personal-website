@@ -266,6 +266,16 @@ body.dark .btn-dark:hover {
     color: white;
 }
 
+.btn-cyan {
+    background-color: #329bcc;
+    color: white;
+}
+
+.btn-cyan:hover {
+    background-color: #1581b3;
+    color: rgb(224, 224, 224);
+}
+
 /* Dark Mode Switch */
 
 .js-toggle-wrapper {
@@ -410,6 +420,7 @@ body.dark .post-preview {
 
 .post-preview .blog-tags {
     padding: 0 20px;
+    margin: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -515,8 +526,27 @@ body.dark .post-preview a:hover {
 .post-preview .post-read-more {
     font-weight: 800;
     float: right;
-    margin-top: auto;
-    color: #000f1a;
+    margin-left: auto;
+    color: white;
+    background-color: #000f1a;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    border-radius: .5em;
+}
+
+body.dark .post-preview .post-read-more {
+    background-color: #329bcc;
+    color: #212121;
+}
+
+.post-preview .post-read-more:hover {
+    background-color: #003258;
+    color: rgb(224, 224, 224);
+}
+
+body.dark .post-preview .post-read-more:hover {
+    background-color: #1581b3;
+    color: #dfdfdf;
 }
 
 @media only screen and (min-width: 768px) {
@@ -543,7 +573,7 @@ ul.share li a {
     border-radius: 50%;
     text-decoration: none !important;
     margin: 0;
-  }
+}
 
 
 /* --- Post Header --- */
@@ -555,4 +585,4 @@ hr.small {
     border-width: 4px;
     border-color: inherit;
     border-radius: 3px;
-  }
+}

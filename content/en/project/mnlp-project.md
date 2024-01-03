@@ -13,7 +13,7 @@ tags:
 summary: "An attempt at training a large language model for assisting students in understanding EPFL course materials."
 ---
 
-{{<link href="/docs/project/mnlp-project/MNLP_final_report.pdf" class="btn btn-red my-3" target="_blank" inner="Report">}}
+{{<link href="/docs/project/mnlp-project/MNLP_final_report.pdf" class="btn btn-cyan my-3" target="_blank" inner="Report">}}
 
 ## Introduction
 

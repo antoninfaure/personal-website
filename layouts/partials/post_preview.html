@@ -4,7 +4,8 @@
         <div class="post-image">
             <a href="{{ .Permalink }}">
                 {{ if .Params.preview }}
-                {{ partial "image.html" (dict "Class" "img-title" "Src" (resources.Get .Params.preview) "Alt" .Title "Resize" "720x" "Webp" true) }}
+                {{ partial "image.html" (dict "Class" "img-title" "Src" (resources.Get .Params.preview) "Alt" .Title
+                "Resize" "720x" "Webp" true) }}
                 {{ end }}
                 {{ if .Params.video }}
                 <video loop autoplay muted playsinline class="img-title">
@@ -14,7 +15,7 @@
             </a>
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 align-self-stretch h-100">
         <div class="d-flex flex-column">
             <a href="{{ .Permalink }}" class="post-heading">
                 <h2 class="post-title">{{ .Title }}</h2>
@@ -31,23 +32,28 @@
             <div class="post-entry">
                 {{ if .Params.summary }}
                 {{ .Params.summary }}<br>
-                <a href="{{ .Permalink }}" class="post-read-more">[{{ i18n "readMore" }}]</a>
                 {{ else if .Truncated }}
                 {{ .Summary }}<br>
-                <a href="{{ .Permalink }}" class="post-read-more">[{{ i18n "readMore" }}]</a>
                 {{ else }}
                 {{ .Content }}
                 {{ end }}
             </div>
         </div>
+
     </div>
 
-    {{ if .Params.tags }}
-    <div class="blog-tags">
-        {{ range .Params.tags }}
-        <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+    <div class="d-flex flex-wrap align-items-center justify-between w-100 mt-4">
+
+        {{ if .Params.tags }}
+        <div class="blog-tags mt-2">
+            {{ range .Params.tags }}
+            <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+            {{ end }}
+        </div>
         {{ end }}
-    </div>
-    {{ end }}
 
+
+        <a href="{{ .Permalink }}" class="post-read-more mt-2">{{ i18n "readMore" }}</a>
+
+    </div>
 </article>

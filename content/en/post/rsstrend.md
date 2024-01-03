@@ -15,9 +15,9 @@ summary: Analyzing RSS feeds from major French media outlets to create a Text Ne
 preview: /images/post/rss-trends/rss-trends.webp
 ---
 
-{{<link href="https://github.com/antoninfaure/rssTrends" class="btn btn-default my-3" target="_blank" inner="GitHub">}}
-{{<link href="https://www.kaggle.com/datasets/antoninfaure/news-france" target="_blank" class="btn btn-info my-3" inner="Kaggle Dataset">}}
-{{<link href="https://medium.com/@antonin.faure/grouping-french-news-on-rss-feeds-d4a05404d848" target="_blank" class="btn btn-danger my-3" inner="Medium">}}
+{{<link href="https://github.com/antoninfaure/rssTrends" class="btn btn-cyan my-3" target="_blank" inner="GitHub">}}
+{{<link href="https://www.kaggle.com/datasets/antoninfaure/news-france" target="_blank" class="btn btn-red my-3" inner="Kaggle Dataset">}}
+{{<link href="https://medium.com/@antonin.faure/grouping-french-news-on-rss-feeds-d4a05404d848" target="_blank" class="btn btn-dark my-3" inner="Medium">}}
 
 {{<link href="https://antoninfaure.github.io/rssTrends/" target="_blank" class="btn btn-success my-3" inner="Live Demo">}}
 {{<iframe src="https://antoninfaure.github.io/rssTrends/" class="w-100" >}}

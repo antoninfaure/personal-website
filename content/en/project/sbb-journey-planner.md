@@ -13,7 +13,7 @@ tags:
 summary: "An EPFL course project using Hadoop and Python to develop a dependable public transport route planner for the Zurich area"
 ---
 
-{{<link href="https://github.com/antoninfaure/sbb-journey-planner" class="btn btn-dark my-3" target="_blank" inner="GitHub">}}
+{{<link href="https://github.com/antoninfaure/sbb-journey-planner" class="btn btn-cyan my-3" target="_blank" inner="GitHub">}}
 
 ## Introduction
 

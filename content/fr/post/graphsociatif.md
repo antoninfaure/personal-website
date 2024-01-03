@@ -16,7 +16,7 @@ tags:
 summary: Scraping du LDAP de l'EPFL pour visualiser le réseau associatif de l'EPFL en utilisant D3.js
 ---
 
-{{<link href="https://github.com/antoninfaure/graphsociatif" class="btn btn-default my-3" target="_blank" inner="GitHub">}}
+{{<link href="https://github.com/antoninfaure/graphsociatif" class="btn btn-cyan my-3" target="_blank" inner="GitHub">}}
 {{<link href="https://antoninfaure.github.io/graphsociatif" class="btn btn-success my-3" inner="Live Demo" >}}
 {{<iframe src="https://antoninfaure.github.io/graphsociatif" class="w-100" >}}
 
@@ -26,7 +26,7 @@ Créons une visualisation interactive qui montre les relations entre les associa
 
 - [Récupération de la liste des associations](#récupération-de-la-liste-des-associations)
 - [Récupération de la liste des personnes dans une unité](#récupération-de-la-liste-des-personnes-dans-une-unité)
-- [Calcul des tailles d'unités et d'utilisateurs](#calcul-des-tailles-dunités-et-dutilisateurs)
+  - [Calcul des tailles d'unités et d'utilisateurs](#calcul-des-tailles-dunités-et-dutilisateurs)
 - [Calcul des liens entre les unités et les utilisateurs](#calcul-des-liens-entre-les-unités-et-les-utilisateurs)
 - [Visualisation avec D3.js](#visualisation-avec-d3js)
 - [Conclusion](#conclusion)
@@ -713,7 +713,8 @@ La visualisation est maintenant terminée ! Nous pouvons ouvrir le fichier `inde
 
 Pour personnaliser la visualisation, nous pouvons modifier l'échelle de couleurs, le rayon des nœuds, les paramètres de simulation de force, etc dans le fichier `network.js`.
 
-![Graphsociatif](/images/post/graphsociatif/graphsociatifBig.png)
+
+{{<image src="/images/post/graphsociatif/graphsociatifBig.png" alt="Graphsociatif" position="center" style="border-radius: 10px;" >}}
 
 ---
 

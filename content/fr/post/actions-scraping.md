@@ -88,7 +88,8 @@ steps:
 
 Pour valider et envoyer les modifications sur le repository, nous pouvons utiliser l'action `ad-m/github-push-action` ([voir la documentation](https://github.com/ad-m/github-push-action)). Cette action va valider et envoyer les modifications sur le repository. Nous devons configurer l'action pour utiliser la variable secrète `GITHUB_TOKEN` ([voir la documentation](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)) afin de permettre l'envoi des modifications sur le repository.
 Pour ce faire nous devons donner l'autorisation d'écriture au `GITHUB_TOKEN` dans les paramètres du repository : 
-![github-token-settings](/images/post/actions-scraping/settings.png)
+
+{{<image src="/images/post/actions-scraping/settings.png" alt="github-token-settings" position="center">}}
 
 Le workflow génère ensuite automatiquement son propre token, qui est stocké dans la variable secrète `GITHUB_TOKEN`. Ce token est utilisé pour autoriser l'envoi des modifications sur le repository. Nous allons envoyer les modifications directement sur la branche `main`.
 
