@@ -4,6 +4,8 @@ theme = 'beautifulhugo'
 googleAnalytics='G-DNX97H63H6'
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+description = "Antonin Faure's personal website"
+tags = ["blog", "portfolio", "projects", "seo", "epfl", "data science", "machine learning", "deep learning", "computer science", "programming", "python", "javascript", "html", "css", "git", "github", "gitlab", "docker", "linux", "jupyter", "jupyterlab", "jupyter notebook", "pandas", "numpy", "scikit-learn", "tensorflow", "pytorch", "matplotlib", "seaborn", "plotly", "d3.js", "node.js", "react", "vue.js", "flask", "sql", "mongodb", "postgresql", "latex", "markdown", "jekyll", "hugo", "heroku", "hadoop", "hive","streamlit", "slack", "zoom", "telegram", "github", "gitlab"]
 
 [Params]
   homeTitle = "Antonin Faure"
