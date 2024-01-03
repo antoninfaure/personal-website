@@ -11,6 +11,7 @@ pygmentsUseClasses = true
   socialShare = true
   hideAuthor = true
   custom_css = ["custom.css"]
+  favicon = "/images/favicon.ico"
 [markup]
   [markup.highlight]
     noclasses = false
