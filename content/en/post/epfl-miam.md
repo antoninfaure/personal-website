@@ -25,7 +25,7 @@ In the world of data science, every dataset has a story to tell. In this article
 
 ---
 
-## Data Scraping
+# Data Scraping
 
 We kickstart our journey with Python, a versatile language that excels at web scraping. We'll use Python libraries such as `requests`, `BeautifulSoup`, and `pandas` to fetch and structure our data.
 
@@ -37,7 +37,7 @@ import re
 from tqdm import tqdm
 ```
 
-### Getting the Menu Data for a given Date
+## Getting the Menu Data for a given Date
 
 Our first goal is to retrieve the restaurant menu data for EPFL. We create a function `get_menu(date)` to fetch the menu for a specific date:
 
@@ -134,7 +134,7 @@ def get_menu(date):
     return menus
 ```
 
-### Fetching Menus for a Date Range
+## Fetching Menus for a Date Range
 
 To build a comprehensive dataset, we create another function `get_all_menus(start_date, end_date)` to fetch menus for a range of dates:
 
@@ -164,7 +164,7 @@ I've ran this function for the date range 2022-01-03 to 2023-08-31, in order to 
 
 ---
 
-## Exploratory Data Analysis (EDA)
+# Exploratory Data Analysis (EDA)
 
 With our menu data in hand, it's time for some EDA. We load the data and start by examining its structure:
 
@@ -194,7 +194,7 @@ min        0.000000      0.000000      0.000000      0.000000
 max       25.000000     25.000000     25.000000    122.000000
 ```
 
-#### Key Insights from Summary Statistics
+### Key Insights from Summary Statistics
 - The mean price for a student meal is lower than that of a doctoral student, which is lower than that of a campus employee, which is lower than that of a visitor. This makes sense as students are on a tight budget, and visitors are willing to pay more for a meal.
 - The maximum price for a visitor meal is CHF 122, which is **very high** for a meal at an EPFL restaurant. This may be due to a typo by the restaurant, we'll ignore this outlier from now on.
 - The minimum price for a meal is CHF 0 (free), which is **suspicious** for a meal at an EPFL restaurant. This may be due to a typo by the restaurant but it might be interesting to investigate this further.
@@ -220,14 +220,14 @@ vegetarian       0
 dtype: int64
 ```
 
-#### Key Insights from Summary Statistics
+### Key Insights from Summary Statistics
 - We can see that there are missing values in the `etudiant`, `doctorant`, `campus`, and `visiteur` columns but that's due to the fact that not all meals are offered at all price points.
 - There is one missing value in the `name` column, which is **weird** but unsignificant.
 - There are no missing values in the `date`, `restaurant` and `vegetarian` columns, which is **good**.
 - The number of missing values in the `visiteur` column is relatively low compared to the other columns. This is due to the fact that most meals have only one price point which is the `visiteur` price.
 
 
-### Visualizing Vegetarian Proportions
+## Visualizing Vegetarian Proportions
 
 One interesting aspect of the data is the proportion of vegetarian meals over time. To visualize this trend, we calculate the proportion of vegetarian meals for each date and plot the trendline:
 
@@ -279,13 +279,13 @@ plt.show()
 {{<image src="/images/post/epfl-miam/vegetarian-trendline.png" alt="Vegetarian Proportions" position="center">}}
 
 
-#### Key Insights from Vegetarian Proportions
+### Key Insights from Vegetarian Proportions
 
 - On average, the proportion of vegetarian meals appears to be stable over time (a regression line around **40%**), with a slight **downward trend** in recent months.
 - There are a few outliers with a proportion of 0% or 100% vegetarian meals that may be due to no/few meals being offered on that day. It may be worth investigating these outliers further.
 - Some days have a higher proportion of vegetarian meals than others. This may be due to the **vegetarian days policy** at EPFL, where some days are vegetarian-only. It may be worth investigating this further to confirm this hypothesis.
 
-### Visualizing Price Distributions
+## Visualizing Price Distributions
 
 We visualize the distribution of meal prices for students (etudiants) using histograms and boxplots:
 
@@ -322,14 +322,14 @@ plt.show()
 
 {{<image src="/images/post/epfl-miam/etudiant-distribution.png" alt="Price Distributions" position="center">}}
 
-#### Key Insights from Price Distributions
+### Key Insights from Price Distributions
 
 - The majority of student meal prices fall within a certain range, with a few outliers at higher prices.
 - The mean student meal price is approximately CHF 10.42, with a median price of CHF 10 which is **high** for a student budget.
 
 ---
 
-## Network Analysis
+# Network Analysis
 
 Now, let's delve into network processing. We'll clean the menu item names, remove stopwords, create a vocabulary, and identify bigrams (pairs of consecutive words) to represent relationships. We'll then structure the data for network graph creation. Finally, we'll visualize the network graph using D3.js.
 
@@ -350,9 +350,9 @@ Now, let's delve into network processing. We'll clean the menu item names, remov
     - [Tick Function and Drag Functions](#tick-function-and-drag-functions)
     - [Top Bigrams](#top-bigrams)
 
-### Network Building
+## Network Building
 
-#### Data Preprocessing
+### Data Preprocessing
 
 We start by loading the dataset using Pandas:
 
@@ -386,7 +386,7 @@ def extract_tokens(text):
 tokens = menus['name'].apply(extract_tokens)
 ```
 
-#### Building a Vocabulary
+### Building a Vocabulary
 
 To create a network graph, we need to build a vocabulary from these cleaned tokens. We count the frequency of each term in the entire dataset:
 
@@ -404,7 +404,7 @@ To create a network graph, we need to build a vocabulary from these cleaned toke
 vocabulary = create_vocabulary(tokens)
 ```
 
-#### Identifying Bigrams
+### Identifying Bigrams
 
 Now that we have our vocabulary, we can move on to creating the network graph. We'll filter the vocabulary to include only terms that occur frequently enough (e.g., at least 100 times) to reduce noise in our visualization:
 
@@ -427,7 +427,7 @@ for bigram in bigrams:
         filtered_bigrams.append((new_bigram, bigram[1]))
 ```
 
-#### Graph Creation
+### Graph Creation
 
 With the filtered vocabulary and bigrams in place, we can structure the data for our network graph. We define vertices (nodes) and edges (connections) based on this data:
 
@@ -452,7 +452,7 @@ for i, edge in enumerate(filtered_bigrams):
     })
 ```
 
-### Network Visualization with D3.js
+## Network Visualization with D3.js
 
 To visualize our network graph interactively, we turn to D3.js. We create an HTML page that integrates the D3.js script:
 
@@ -553,7 +553,7 @@ body {
 
 Finally, we need to create a D3.js script `network.js` to visualize the network graph.
 
-#### Data Loading
+### Data Loading
 
 We first start our script by loading data from JSON files containing network graph information.
 
@@ -586,7 +586,7 @@ fetch(`./network/edges.json`)
 Here we fetch two JSON files: `edges.json` and `vertices.json`, which contain information about the links (edges) and nodes of the graph, respectively. If the data cannot be loaded, error messages are logged.
 
 
-#### Graph Visualization Setup
+### Graph Visualization Setup
 
 We set up the initial parameters and elements for the network graph visualization such as `title`, `width`, and `height`.
 `title` represents the title of the graph, and `width` and `height` are calculated based on the dimensions of the `mynetwork` container.
@@ -615,7 +615,7 @@ const svg = d3.select('#mynetwork')
     .call(zoom_handler.transform, initial_zoom)
 ```
 
-#### Color Scale and Node Radius
+### Color Scale and Node Radius
 
 We define the color scale and node radius for graph visualization. The color scale maps node sizes to colors, and the node radius defines the radius for nodes in the graph. 
 To do so, we first calculate the maximum node size in the graph and define a color scale based on this value.
@@ -636,7 +636,7 @@ var color = d3.scaleLinear()
 const radius = 10
 ```
 
-#### Force Simulation
+### Force Simulation
 
 We then set up the force simulation for node positioning within the graph.
 
@@ -651,7 +651,7 @@ var simulation = d3.forceSimulation()
 
 Here, the force simulation is defined with forces for links, centering, and collision detection. The `ticked` function is called to handle node positions during simulation ticks.
 
-#### SVG Elements and Drag Handler
+### SVG Elements and Drag Handler
 
 We create SVG elements for links and nodes and defines a drag handler for nodes.
 
@@ -670,7 +670,7 @@ var drag_handler = d3.drag()
 
 SVG groups for links and nodes are created, and the drag handler is defined for node interactions.
 
-#### Graph Initialization
+### Graph Initialization
 
 We then initializes the graph with nodes and links.
 
@@ -680,7 +680,7 @@ restart()
 
 The `restart` function is called to set up nodes, links, and their attributes based on the loaded data.
 
-#### Title
+### Title
 
 We add a title to the graph for context.
 
@@ -695,7 +695,7 @@ svg.append('g')
     .text(title);
 ```
 
-#### Tick Function and Drag Functions
+### Tick Function and Drag Functions
 
 Finally we need to define functions for handling simulation ticks and node dragging.
 
@@ -743,7 +743,7 @@ function dragended(d) {
 
 These functions handle node dragging interactions within the graph.
 
-#### Top Bigrams
+### Top Bigrams
 
 In addition to the network graph, we also want to display the top bigrams in the dataset.
 To do so we first fetch the `bigrams.json` file, then sort the bigrams by frequency and finally display the top 50 in the `#topbigrams` element of `index.html` in order to provide user with insights into the most common two-word combinations (bigrams) found in the menu item names.
@@ -774,7 +774,7 @@ fetch(`./network/bigrams.json`)
 
 ---
 
-## Automation with Cron Jobs
+# Automation with Cron Jobs
 
 Automation is key to maintaining an up-to-date dataset. We create a Python script `cron.py` that runs daily and updates the menu data:
 
@@ -799,7 +799,7 @@ if today not in menus['date'].values:
     menus.to_csv('data/menus.csv', index=False)
 ```
 
-### Scheduled Workflow with GitHub Actions
+## Scheduled Workflow with GitHub Actions
 
 To ensure that our dataset remains up-to-date, we can automate the data update process using GitHub Actions. If you want to learn more I made a dedicated post about [Automating Data Scraping with GitHub Actions](https://antoninfaure.ch/post/actions-scraping).
 
@@ -850,7 +850,7 @@ jobs:
           branch: main 
 ```
 
-## Conclusion
+# Conclusion
 
 In this journey, we've gone from data scraping to network visualization. We've explored EPFL restaurant menus, conducted EDA, processed data for network graphs, and automated the data update process. 
 

@@ -33,7 +33,7 @@ Inspired by and curious about Google News articles grouping by event I challenge
 
 ---
 
-## Scraping RSS feeds
+# Scraping RSS feeds
 
 To retrieve French news articles, I relied on the RSS feeds from the following media sources:
 
@@ -81,7 +81,7 @@ def scrap_feeds(feed_urls):
 
 ---
 
-## Extracting vocabulary and tf using NLP
+# Extracting vocabulary and tf using NLP
 
 Next, it's necessary to process the raw text of the articles using the libraries [Spacy](https://spacy.io) and [NLTK](https://www.nltk.org), which handle special characters, tokenize each term and then lemmatize them. Additionally, a vocabulary dictionary is generated, containing the frequency of terms (tf) within the corpus.
 
@@ -129,7 +129,7 @@ If you wanna play with the dataset it’s available on Kaggle: {{<link inner="Ka
 
 ---
 
-## Creating a Text Network
+# Creating a Text Network
 
 To visualize the relations between terms, we first have to create a network.
 
@@ -195,7 +195,7 @@ This script outputs two files:
 
 ---
 
-## Visualizing the Text Network with D3.js
+# Visualizing the Text Network with D3.js
 
 In order to visualize the Text Network we will use the [D3.js](https://d3js.org/) library with its [Force Graph](https://d3js.org/d3-force).
 
@@ -452,7 +452,7 @@ Alternatively, the software [Gephi](https://gephi.org/) can be used for handling
 
 ---
 
-## Grouping news with associations rules
+# Grouping news with associations rules
 
 To obtain the most trending topics, various association rule criteria can be considered: confidence, support, lift, added value, leverage, and conviction.
 
@@ -600,7 +600,7 @@ There’s definitely more work to make this solution more accurate and self-lear
 
 ---
 
-## Automating with GitHub Actions
+# Automating with GitHub Actions
 
 In order to scrap the data and update our graph on a daily basis without our intervention we can use [GitHub Actions](https://github.com/features/actions). I made a [dedicated post](/post/actions-scraping) to explain the process.
 

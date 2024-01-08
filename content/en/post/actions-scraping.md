@@ -25,7 +25,7 @@ We want our workflow to:
 
 ---
 
-## Triggering the workflow on a schedule
+# Triggering the workflow on a schedule
 
 In order to trigger the workflow on a schedule basis we can use the `schedule` event ([see documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events)). The schedule is defined using a cron syntax ([see documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule)).
 
@@ -37,7 +37,7 @@ on:
 
 ---
 
-## Pulling the latest version of the repository
+# Pulling the latest version of the repository
 
 In order to pull the latest version of the repository we can use the `actions/checkout` action ([see documentation](https://github.com/actions/checkout)). This action will checkout the repository content to the github runner.
 
@@ -49,7 +49,7 @@ steps:
 
 ---
 
-## Running a python script
+# Running a python script
 
 In order to run a python script we need to setup python and install the required packages. We can use the `actions/setup-python` action ([see documentation](https://github.com/actions/setup-python)). This action will setup python and pip on the github runner. We can then install the required packages for our usage using `pip install -r requirements.txt`.
 
@@ -84,7 +84,7 @@ steps:
 
 ---
 
-## Commit and push the changes to the repository
+# Commit and push the changes to the repository
 
 In order to commit and push the changes to the repository we can use the `ad-m/github-push-action` action ([see documentation](https://github.com/ad-m/github-push-action)). This action will commit and push the changes to the repository. We need to configure the action to use the `GITHUB_TOKEN` secret variable ([see documentation](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)) in order to allow to push the changes to the repository.
 To do so we need to set the autorization of the `GITHUB_TOKEN` secret variable to read and write in the repository settings:
@@ -111,7 +111,7 @@ steps:
 
 ---
 
-## Summary
+# Summary
 
 To summarize, here is the full workflow:
 

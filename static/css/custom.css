@@ -8,8 +8,9 @@ a:focus {
 }
 
 body {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #000e1a;
+    font-family: 'Spectral', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #404040;
+    font-size: 1.8em;
 }
 
 
@@ -18,6 +19,22 @@ body.dark {
     color: white;
 }
 
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.62em;
+}
 
 footer {
     background-color: #001322;
@@ -486,7 +503,7 @@ body.dark .post-preview a:hover {
 }
 
 .post-preview .post-entry {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Spectral', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .post-entry-container {

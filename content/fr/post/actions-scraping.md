@@ -25,7 +25,7 @@ Nous souhaitons que notre flux de travail puisse :
 
 ---
 
-## Déclenchement du workflow selon un horaire
+# Déclenchement du workflow selon un horaire
 
 Pour déclencher le workflow selon un horaire, nous pouvons utiliser l'événement `schedule` ([voir la documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events)). L'horaire est défini à l'aide d'une syntaxe cron ([voir la documentation](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule)).
 
@@ -37,7 +37,7 @@ on:
 
 ---
 
-## Récupération de la dernière version du repository
+# Récupération de la dernière version du repository
 
 Pour récupérer la dernière version du repository, nous pouvons utiliser l'action `actions/checkout` ([voir la documentation](https://github.com/actions/checkout)). Cette action va extraire le contenu du repository vers l'exécuteur GitHub.
 
@@ -49,7 +49,7 @@ steps:
 
 ---
 
-## Exécution d'un script Python
+# Exécution d'un script Python
 
 Pour exécuter un script Python, nous devons configurer Python et installer les paquets requis. Nous pouvons utiliser l'action `actions/setup-python` ([voir la documentation](https://github.com/actions/setup-python)). Cette action va configurer Python et pip sur l'exécuteur GitHub. Ensuite, nous pouvons installer les librairies requies pour notre utilisation à l'aide de `pip install -r requirements.txt`.
 
@@ -84,7 +84,7 @@ steps:
 
 ---
 
-## Commit et push les modifications sur le repository
+# Commit et push les modifications sur le repository
 
 Pour valider et envoyer les modifications sur le repository, nous pouvons utiliser l'action `ad-m/github-push-action` ([voir la documentation](https://github.com/ad-m/github-push-action)). Cette action va valider et envoyer les modifications sur le repository. Nous devons configurer l'action pour utiliser la variable secrète `GITHUB_TOKEN` ([voir la documentation](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)) afin de permettre l'envoi des modifications sur le repository.
 Pour ce faire nous devons donner l'autorisation d'écriture au `GITHUB_TOKEN` dans les paramètres du repository : 
@@ -111,7 +111,7 @@ steps:
 
 ---
 
-## Résumé
+# Résumé
 
 Pour résumer, voici le workflow complet :
 

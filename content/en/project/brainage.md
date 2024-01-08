@@ -16,15 +16,15 @@ summary: "Exploring the impact of cluster subgrouping models on biological age p
 {{<link href="https://github.com/CS-433/project2_brainAge" class="btn btn-cyan my-3" target="_blank" inner="GitHub Repository">}}
 {{<link href="/docs/project/brainage/Report_Project2_BrainAge.pdf" class="btn btn-red my-3" target="_blank" inner="Report">}}
 
-## Introduction
+# Introduction
 
 As data scientists and researchers, we are constantly seeking ways to push the boundaries of accuracy and efficiency in various domains. In the field of medical image processing, the accuracy of age prediction based on anatomical features can have significant implications for diagnosing and understanding age-related conditions. In this project, we embarked on a journey to optimize biological age prediction from brain anatomical volume measurements. Our goal was to determine whether splitting patients into subgroups and developing prediction models for each subgroup could improve the accuracy of age prediction compared to a global prediction model.
 
-## Project Objective
+# Project Objective
 
 The primary objective of this project was two-fold. First, we aimed to reduce the dimensionality of our features, selecting only the most relevant ones, and then testing several machine learning models to predict age based on brain anatomical measurements. Second, we explored the concept of subgrouping patients by clustering the data points. For each subgroup, we trained and tested prediction models individually. Our hypothesis was that subgrouping and tailoring models to each cluster could lead to more precise age predictions.
 
-## Data and Methodology
+# Data and Methodology
 
 We were provided with two datasets containing volumetric measurements of brain areas, along with information about the patients' ages and genders. The datasets, although valuable, posed challenges due to their relatively small sizes. When dividing the data into smaller subsets for subgroup analysis, overfitting became a concern.
 
@@ -32,13 +32,13 @@ Moreover, the age range of the patients in our datasets was limited, spanning fr
 
 To address the challenges, we evaluated multiple machine learning models and explored the impact of subgrouping the patients. The datasets' limitations, including their small sizes and potential variations in data acquisition parameters, were acknowledged and considered throughout our analysis.
 
-## Subgrouping and Age Prediction
+# Subgrouping and Age Prediction
 
 The results of our project offered intriguing insights into the accuracy of age prediction. Although the differences in accuracy were not substantial, subgrouping the patients and developing models tailored to each cluster yielded slightly more accurate age predictions compared to models trained on the entire dataset.
 
 The practice of clustering patients and personalizing prediction models for each cluster showcased promise. While the improvement in accuracy was incremental, it hinted at the potential benefits of considering patient subgroups in age prediction tasks.
 
-## Future Directions
+# Future Directions
 
 As we conclude this project, we recognize the need for further improvements and considerations. To enhance the accuracy and robustness of age prediction models, future work should address the following aspects:
 

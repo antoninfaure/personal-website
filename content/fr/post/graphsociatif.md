@@ -33,7 +33,7 @@ Créons une visualisation interactive qui montre les relations entre les associa
 
 ---
 
-## Récupération de la liste des associations
+# Récupération de la liste des associations
 
 Après quelques recherches sur le site web de l'EPFL, j'ai découvert l'API search-ai.epfl.ch. Elle permet de rechercher des unités et des personnes. L'API n'est pas documentée publiquement, mais nous avons seulement besoin d'utiliser un point de terminaison pour récupérer la liste des sous-unités d'une unité :
 
@@ -227,7 +227,7 @@ def list_units(write_groups_json=True, write_units_json=True):
 
 ---
 
-## Récupération de la liste des personnes dans une unité
+# Récupération de la liste des personnes dans une unité
 
 Maintenant que nous avons la liste des sous-unités, nous devons récupérer la liste des personnes dans chaque sous-unité. Testons le même point de terminaison qu'auparavant avec l'acronyme `SYSMIC` :
 
@@ -413,7 +413,7 @@ def list_accreds(units):
 
 ---
 
-### Calcul des tailles d'unités et d'utilisateurs
+## Calcul des tailles d'unités et d'utilisateurs
 
 Maintenant que nous avons la liste des accréditations, nous pouvons calculer la taille de chaque unité et de chaque utilisateur. La taille d'une unité est le nombre d'accréditations dans l'unité. La taille d'un utilisateur est le nombre d'accréditations de l'utilisateur.
 
@@ -466,7 +466,7 @@ def compute_users_size(accreds):
 
 ---
 
-## Calcul des liens entre les unités et les utilisateurs
+# Calcul des liens entre les unités et les utilisateurs
 
 Maintenant que nous avons la liste des accréditations, nous pouvons calculer les liens entre les unités et les utilisateurs. Un lien entre une unité et un utilisateur signifie que l'utilisateur possède une accréditation dans l'unité.
 
@@ -489,7 +489,7 @@ def compute_links(accreds, units, users):
     return links
 ```
 
-## Visualisation avec D3.js
+# Visualisation avec D3.js
 
 Maintenant que nous avons la liste des unités, des utilisateurs et des liens, nous pouvons la visualiser avec D3.js. La visualisation est basée sur l'exemple du [Graphique à Liaisons Fortes de D3.js](https://observablehq.com/@d3/force-directed-graph).
 
@@ -718,7 +718,7 @@ Pour personnaliser la visualisation, nous pouvons modifier l'échelle de couleur
 
 ---
 
-## Conclusion
+# Conclusion
 
 Nous avons appris comment récupérer la liste des associations et la liste des accréditations à partir du serveur LDAP de l'EPFL, ainsi que comment les visualiser avec D3.js. La visualisation est disponible sur [https://antoninfaure.github.io/graphsociatif](https://antoninfaure.github.io/graphsociatif).
 

@@ -28,7 +28,7 @@ Inspiré et curieux de la façon dont Google News regroupe les articles par év�
 
 ---
 
-## Scraping des flux RSS
+# Scraping des flux RSS
 
 Pour récupérer des articles d'actualités françaises je me suis basé sur les flux RSS des médias suivants : 
 
@@ -76,7 +76,7 @@ def scrap_feeds(feed_urls):
 
 ---
 
-## Analyse du vocabulaire et de la fréquence des termes avec du NLP
+# Analyse du vocabulaire et de la fréquence des termes avec du NLP
 
 Ensuite, il est nécessaire de traiter le texte brut des articles en utilisant les bibliothèques [Spacy](https://spacy.io) et [NLTK](https://www.nltk.org), qui gèrent les caractères spéciaux, découpent chaque terme en tokens, puis effectuent une lemmatisation. De plus, un dictionnaire de vocabulaire est généré, contenant la fréquence des termes (tf) dans le corpus.
 
@@ -124,7 +124,7 @@ Si vous souhaitez travailler avec le jeu de données, il est disponible sur Kagg
 
 ---
 
-## Création d'un Text Network
+# Création d'un Text Network
 
 Pour visualiser les relations entre les termes, nous devons d'abord créer un réseau.
 
@@ -190,7 +190,7 @@ Ce script génère deux fichiers :
 
 ---
 
-## Visualisation du Text Network avec D3.js
+# Visualisation du Text Network avec D3.js
 
 Pour visualiser le réseau de texte, nous utiliserons la bibliothèque [D3.js](https://d3js.org/) avec son composant [Force Graph](https://d3js.org/d3-force).
 
@@ -448,7 +448,7 @@ Alternativement, le logiciel [Gephi](https://gephi.org/) peut être utilisé pou
 
 ---
 
-## Regroupement des actualités avec les règles d'association
+# Regroupement des actualités avec les règles d'association
 
 Pour obtenir les sujets les plus tendances, divers critères de règles d'association peuvent être pris en compte : confiance, support, lift, valeur ajoutée, effet de levier et conviction.
 
@@ -596,7 +596,7 @@ Il y a certainement plus de travail à faire pour rendre cette solution plus pr�
 
 ---
 
-## Automatiser avec GitHub Actions
+# Automatiser avec GitHub Actions
 
 Pour collecter les données et mettre à jour notre graphique quotidiennement sans notre intervention, nous pouvons utiliser [GitHub Actions](https://github.com/features/actions). J'ai rédigé un [article dédié](/post/actions-scraping) pour expliquer le processus.
 

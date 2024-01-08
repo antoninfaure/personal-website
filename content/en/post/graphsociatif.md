@@ -33,7 +33,7 @@ Let's create an interactive visualization to show the relationships between asso
 
 ---
 
-## Retrieve the list of associations
+# Retrieve the list of associations
 
 After some research on the EPFL website, I found the search-ai.epfl.ch API. It allows you to search for units and people. The API is not publicly documented, but we just need to use one endpoint to retrieve the list of subunits of a unit:
 
@@ -227,7 +227,7 @@ def list_units(write_groups_json=True, write_units_json=True):
 
 ---
 
-## Retrieve the list of people in a unit
+# Retrieve the list of people in a unit
 
 Now that we have the list of subunits, we have to retrieve the list of people in each subunit. Let's test the same endpoint as before with the `SYSMIC` accronym:
 
@@ -413,7 +413,7 @@ def list_accreds(units):
 
 ---
 
-## Compute unit and user sizes
+# Compute unit and user sizes
 
 Now that we have the list of accreditations, we can compute the size of each unit and each user. The size of a unit is the number of accreditations in the unit. The size of a user is the number of accreditations of the user.
 
@@ -466,7 +466,7 @@ def compute_users_size(accreds):
 
 ---
 
-## Compute links between units and users
+# Compute links between units and users
 
 Now that we have the list of accreditations, we can compute the links between units and users. A link between a unit and a user means that the user has an accreditation in the unit.
 
@@ -489,7 +489,7 @@ def compute_links(accreds, units, users):
     return links
 ```
 
-## Visualize with D3.js
+# Visualize with D3.js
 
 Now that we have the list of units, users, and links, we can visualize it with D3.js. The visualization is based on the [D3.js Force-Directed Graph](https://observablehq.com/@d3/force-directed-graph) example.
 
@@ -745,7 +745,7 @@ For customizing the visualization, we can change the color scale, the radius of 
 
 ---
 
-## Conclusion
+# Conclusion
 
 We have seen how to retrieve the list of associations and the list of accreditations from the EPFL LDAP server, and how to visualize it with D3.js. The visualization is available here:
 {{<link href="https://antoninfaure.github.io/graphsociatif" inner="Demo" class="btn btn-success" target="_blank" >}}
