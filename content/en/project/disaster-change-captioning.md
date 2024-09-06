@@ -10,7 +10,7 @@ tags:
   - machine-learning
   - multimodal
   - remote-sensing
-summary: "A project to detect disaster-driven changes in satellite images using multispectral data and geographic context. Tested various models, with FC-EF showing the best results. Future work includes expanding the dataset and exploring visual question answering (VQA)."
+summary: "A project to detect disaster-driven changes in satellite images using multispectral data and geographic context."
 ---
 
 {{<link href="/docs/project/disaster-change-captioning/PDS_Disaster_Change_Captioning.pdf" class="btn btn-red my-3" target="_blank" inner="Report">}}
