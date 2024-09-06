@@ -13,10 +13,11 @@ slug: 'about'
 
 ### Qui suis-je ?
 Antonin Faure \
-23 ans \
+24 ans \
 Originaire de Nantes, France \
-Habite à Lausanne, Suisse \
-Étudiant en Master de Data Science à l'EPFL
+Habite à Paris, France \
+Master Data Science à l'EPFL \
+Stagiaire @Mistral AI
 
 ### Mes hobbies
 Cyclisme \

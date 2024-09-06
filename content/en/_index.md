@@ -3,10 +3,11 @@
 ||
 ### Who am I?
 Antonin Faure \
-23 y.o. \
+24 y.o. \
 From Nantes, France \
-Live in Lausanne, Suisse \
-Master Student in Data Science at EPFL
+Live in Paris, France \
+MSc Data Science at EPFL \
+Intern @Mistral AI
 ||
 ### My hobbies
 Cycling \
