@@ -15,7 +15,7 @@ summary: "A project focused on automating discharge summaries from clinical elec
 ---
 
 {{<link href="https://github.com/HAOTIAN89/MEDISCHARGE" class="btn btn-cyan my-3" target="_blank" inner="GitHub Repository">}}
-{{<link href="/docs/project/make-medischarge/2024.bionlp-1.61.pdf" class="btn btn-red my-3" target="_blank" inner="ACL Paper">}}
+{{<link href="https://aclanthology.org/2024.bionlp-1.61/" class="btn btn-red my-3" target="_blank" inner="ACL Paper">}}
 
 # EPFL-MAKE at "Discharge Me!": An LLM System for Automatically Generating Discharge Summaries of Clinical Electronic Health Records
 
