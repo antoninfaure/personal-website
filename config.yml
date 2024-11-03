@@ -19,6 +19,7 @@ languages:
     taxonomies:
       post: posts
       tag: tags
+      stage: stages
     menu:
       main:
         - name: Posts
