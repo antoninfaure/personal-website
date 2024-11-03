@@ -1,6 +1,6 @@
 DefaultContentLanguage: "en"
 baseURL: "https://antoninfaure.ch"
-theme: "Papermod"
+theme: [hugo-PaperMod]
 enableEmoji : true
 enableRobotsTXT : true
 languageCode : "en"
@@ -87,3 +87,7 @@ params:
   analytics:
     google:
       SiteVerificationTag: "G-DNX97H63H6"
+
+module:
+  imports:
+  - path: github.com/adityatelange/hugo-PaperMod
