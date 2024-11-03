@@ -1,2 +1,6 @@
 github.com/gethugothemes/hugo-modules/images v0.0.0-20231025030535-37017d01a181 h1:HOo5+dbFq6CZPiZPNlCXo7RUh+6NSC9Bc1u34D9UAjw=
 github.com/gethugothemes/hugo-modules/images v0.0.0-20231025030535-37017d01a181/go.mod h1:FKliP3qOW9diIcQeLtyZ0Hdhg3PL8bdAkC/6O+XtU90=
+github.com/gethugothemes/hugo-modules/images v0.0.0-20240925042433-d2b5d05977e8 h1:rGWMqcpmotd5G+q5HS9p9sC4GQF2hMxEesuJx8aKvKE=
+github.com/gethugothemes/hugo-modules/images v0.0.0-20240925042433-d2b5d05977e8/go.mod h1:FKliP3qOW9diIcQeLtyZ0Hdhg3PL8bdAkC/6O+XtU90=
+github.com/lxndrblz/anatole v1.15.1 h1:m6wch/u81aMWIc+hsUt+RiHwmoic5Wga2xNfhDQziqU=
+github.com/lxndrblz/anatole v1.15.1/go.mod h1:hy61SRyUDKaWw2P+cERt9UPde5guWyVKgtjdzRF5bfI=

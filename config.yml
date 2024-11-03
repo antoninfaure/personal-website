@@ -1,0 +1,89 @@
+DefaultContentLanguage: "en"
+baseURL: "https://antoninfaure.ch"
+theme: "Papermod"
+enableEmoji : true
+enableRobotsTXT : true
+languageCode : "en"
+summarylength : 10
+title : "Antonin Faure"
+
+mainsections: ["posts"]
+
+minify:
+  disableXML: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      post: posts
+      tag: tags
+    menu:
+      main:
+        - name: Posts
+          url: /
+          weight: 1
+        - name: About
+          url: about/
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  author: Antonin Faure
+  # author: ["Me", "You"] # multiple authors
+
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowShareButtons: false
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  # comments: false
+  #images: ["images/papermod-cover.png"]
+
+  profileMode:
+    enabled: false
+    title: Antonin Faure
+    imageUrl: "#"
+    imageTitle: my image
+    # imageWidth: 120
+    # imageHeight: 120
+    buttons:
+      - name: Archives
+        url: archives
+      - name: Tags
+        url: tags
+
+  homeInfoParams:
+    Title: "👋 Welcome to my blog"
+    Content: >
+      Hi, this is Antonin. I’m documenting my projects in this blog.
+
+      Currently interning at [Mistral AI](https://mistral.ai/).
+
+      Based on the number of mistakes in my posts you can tell how much Mistral Large is involved 😉.
+  socialIcons:
+    - name: github
+      title: Follow me on GitHub
+      url: "https://github.com/antoninfaure"
+    - name: linkedin
+      title: Connect with me on LinkedIn
+      url: "https://www.linkedin.com/in/antoninfaure/"
+
+  analytics:
+    google:
+      SiteVerificationTag: "G-DNX97H63H6"
