@@ -10,6 +10,10 @@ This is the source code of my personal website. It is built with [Hugo](https://
 
 - [Hugo](https://gohugo.io/getting-started/installing/)
 
+````base
+brew install hugo
+```
+
 ### Run the website locally
 
 ```bash
