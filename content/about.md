@@ -11,11 +11,11 @@ showToc: false
 
 ### Who am I?
 - Antonin Faure
-- 24 y.o.
+- 25 y.o.
 - From Nantes, France
 - Live in Paris, France
 - MSc Data Science at EPFL
-- Intern @Mistral AI
+- Working @Mistral AI
 
 ### My hobbies
 - Cycling
