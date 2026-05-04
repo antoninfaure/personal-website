@@ -3,7 +3,7 @@ baseURL: "https://antoninfaure.ch"
 theme: [PaperMod]
 enableEmoji : true
 enableRobotsTXT : true
-languageCode : "en"
+locale : "en"
 summarylength : 10
 title : "Antonin Faure"
 
@@ -14,7 +14,7 @@ minify:
 
 languages:
   en:
-    languageName: "English"
+    label: "English"
     weight: 1
     taxonomies:
       post: posts
